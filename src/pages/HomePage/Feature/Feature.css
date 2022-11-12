@@ -1,0 +1,209 @@
+/* feature */
+.feature{
+    padding-top: 115px;
+    background-color: #f5f6f7;
+    margin-bottom: 115px;
+}
+
+.feature .container{
+    max-width: 1180px;
+}
+
+.feature-title h2{
+    font-size: 40px;
+    line-height: 48px;
+    color: #39404a;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.feature-card{
+    display: flex;
+    position: relative;
+    border-radius: 8px;
+    padding: 18px;
+    border: 1px solid #fff;
+    background-color: #fff;
+    margin-bottom: 25px;
+    transition: all linear 0.3s;
+}
+
+.feature .feature-card:hover{
+    border: 1px solid #119744;
+    box-shadow: 0px 8px 15px 0px rgb(0 0 0 / 10%);
+}
+.feature-image{
+    position: relative;
+    width: 220px;
+}
+
+.feature .feature-label{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.feature .feature-label label{
+    font-size: 14px;
+    background-color: #b12fad;
+    border-radius: 3px;
+    line-height: 13px;
+    padding: 5px 8px;
+    color: #fff;
+}
+
+.feature .feature-wish{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.feature .feature-wish i{
+    font-size: 18px;
+    color: #cccccc;
+    cursor: pointer;
+}
+
+.feature .feature-widget{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    width: 100%;
+    bottom: 0px;
+    opacity: 0;
+    transition: all linear 0.3s;
+}
+
+.feature .feature-card:hover .feature-widget{
+    opacity: 1;
+    bottom: 15px;
+}
+
+.feature .feature-video i{
+    display: flex;
+    width: 40px;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    background-color: #119744;
+    color: #fff;
+    border-radius: 8px;
+    margin-right: 20px;
+}
+
+.feature .feature-view i{
+    display: flex;
+    width: 40px;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    background-color: #119744;
+    color: #fff;
+    border-radius: 8px;
+}
+
+.feature .feature-content{
+    flex: 1;
+    padding-left: 25px;
+    margin-left: 25px;
+    border-left: 1px solid #e8e8e8;
+}
+
+.feature .feature-rating{
+    margin-bottom: 3px;
+    height: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.feature .feature-rating i{
+    font-size: 14px;
+    margin: 0 2px;
+    color: #777777;
+}
+
+.feature .feature-rating a{
+    font-size: 14px;
+    line-height: 26px;
+    color: #777777;
+    margin: 0 2px;
+    transition: all linear 0.3s;
+
+}
+
+.feature .feature-rating a:hover{
+    color: #119744;
+    text-decoration: underline;
+}
+
+.feature .feature-rating .active{
+    color: #ffab10;
+}
+
+.feature .feature-name,.feature-price {
+    font-size: 16px;
+    line-height: 26px;
+    font-weight: 500;
+    color: #39404a;
+    text-align: left;
+    margin-bottom: 3px;
+}
+
+.feature .feature-price{
+    color: #119744;
+    margin-bottom: 13px;
+}
+
+.feature .feature-desc{
+    font-size: 15px;
+    line-height: 25px;
+    margin-bottom: 15px;
+    color: #555555;
+}
+
+.feature .feature-add i{
+    font-size: 14px;
+    margin-right: 5px;
+}
+
+.feature .feature-add span{
+    font-size: 15px;
+    line-height: 26px;
+    color: #39404a;
+    transition: all linear 0.3s;
+}
+
+.feature .feature-card:hover span{
+    color: #fff;
+}
+
+.feature .feature-add{
+    align-items: center;
+    width: 100%;
+    padding: 6px 0;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    transition: all linear 0.3s;
+}
+
+.feature .feature-card:hover .feature-add{
+    color: #fff;
+    background-color: #119744;
+}
+
+.feature-btn{
+    text-align: center;
+    margin-top: 25px;
+}
+
+.feature-btn .btn-outline{
+    font-size: 15px;
+    color: #119744;
+    background-color: #fff;
+    padding: 14px 32px;
+    border-radius: 6px;
+    font-weight: 500;
+    border: 2px solid #119744;
+}

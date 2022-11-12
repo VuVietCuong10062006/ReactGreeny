@@ -1,0 +1,99 @@
+/* nav sidebar */
+.nav-sidebar{
+    position: fixed;
+    top: 0;
+    left: -350px;
+    width: 300px;
+    height: 100vh;
+    z-index: 5;
+    background-color: #fff;
+    box-shadow: 15px 0px 25px 0px rgba(0,0,0,0.15);
+    transition: all linear 0.3s;
+    color: #555555;
+}
+
+.nav-sidebar-active{
+    left: 0;
+}
+
+.nav-sidebar-content{
+    position: relative;
+}
+
+.nav-sidebar-close{
+    position: absolute;
+    top: 0;
+    right: -35px;
+    border: none;
+    background: none;
+}
+
+.nav-sidebar-close i{
+    width: 35px;
+    height: 35px;
+    font-size: 18px;
+    line-height: 35px;
+    border-radius: 50%;
+    color: #555555;
+    background-color: #f5f5f5;
+    transition: all linear 0.3s;
+}
+
+.nav-sidebar-close i:hover{
+    color: #fff;
+    background-color: #119744;
+}
+
+.nav-sidebar{
+    padding: 20px;
+}
+
+.nav-sidebar ul{
+    padding: 0;
+}
+
+.nav-sidebar ul li a{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    color: #555555;
+    font-weight: 500;
+    border-radius: 8px;
+    transition: all linear 0.3s;
+}
+
+.nav-sidebar ul li a:hover{
+    background-color: #f5f5f5;
+    color: #119744;
+}
+
+.nav-sidebar ul li a p{
+    margin: 0;
+    margin-left: 15px;
+}
+
+.nav-sidebar-item-group{
+    display: flex;
+    line-height: 24px;
+    align-items: center;
+}
+
+.nav-sidebar-item .dropdown{
+    font-size: 10px;
+}
+
+.nav-sidebar-item ul li{
+    display: flex;
+    align-items: center;
+    padding-left: 50px;
+}
+
+.nav-sidebar-item ul li a{
+    width: 100%;
+}
+
+.nav-sidebar-item ul li span{
+    font-size: 30px;
+    line-height: 54px;
+}

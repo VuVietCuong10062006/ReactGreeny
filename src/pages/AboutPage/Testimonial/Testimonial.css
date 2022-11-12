@@ -1,0 +1,147 @@
+.about-testimonial{
+    background: url(../../../assets/image/testimonial-shape.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding: 100px 0px 70px;
+}
+
+.about-testimonial .container{
+    max-width: 1180px;
+}
+
+.about-testimonial-title h2{
+    margin-bottom: 70px;
+    font-size: 40px;
+    line-height: 48px;
+    text-align: center;
+    color: #39404a;
+} 
+
+.testimonial-slider{
+    padding: 0;
+}
+
+.testimonial-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.testimonial-img{
+    margin-right: 80px;
+    border-radius: 50%;
+}
+.testimonial-img img{
+   width: 300px;
+   height: 300px;
+   border-radius: 50%;
+   border: 10px solid #fff;
+}
+
+.testimonial-quote{
+    flex: 1;
+}
+
+.testimonial-quote i{
+    font-size: 50px;
+    color: #119744;
+    display: inline-block;
+    margin-bottom: 30px;
+}
+
+.testimonial-quote p{
+    font-size: 24px;
+    line-height: 38px;
+    margin-bottom: 30px;
+    color: #555555;
+}
+
+.testimonial-quote h4{
+    text-transform: capitalize;
+    margin-bottom: 5px;
+    color: #39404a;
+    font-size: 20px;
+    line-height: 28px;
+    font-weight: 500;
+}
+
+.testimonial-quote h6{
+    color: #555555;
+    font-size: 16px;
+    line-height: 26px;
+    font-weight: 400;
+}
+
+@media (max-width: 768px) {
+    .about-testimonial-title h2{
+        margin-bottom: 50px;
+        font-size: 32px;
+        line-height: 48px;
+    } 
+
+    .testimonial-quote p{
+        font-size: 20px;
+        line-height: 32px;
+    }
+
+    .about-introduce .container .row:nth-child(2){
+        flex-wrap: wrap-reverse;
+    }
+
+    .about-introduce .container .row{
+        margin-bottom: 20px;
+    }
+
+    .about-team-title h2{
+        font-size: 32px;
+        line-height: 48px;
+    }
+}
+
+@media (max-width: 390px) {
+    .testimonial-content{
+        flex-direction: column;
+    }
+    
+    .about-testimonial-title h2{
+        margin-bottom: 50px;
+        font-size: 28px;
+        line-height: 36px;
+    } 
+
+    .testimonial-img{
+        margin: auto;
+    }
+
+    .introduce-content h2{
+        font-size: 28px;
+        line-height: 36px;
+    }
+
+    .introduce-content p{
+        font-size: 14px;
+    }
+
+    .introduce-image {
+        margin-bottom: 30px;
+    }
+
+    .about-testimonial{
+        padding: 40px 0;
+    }
+
+    .testimonial-quote p{
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    .about-team-title h2 {
+        font-size: 28px;
+        line-height: 36px;
+    }
+
+    .about-team-title {
+        margin: 40px 0;
+    }
+}

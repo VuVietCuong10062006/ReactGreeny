@@ -1,0 +1,13 @@
+/* promo */
+.promo{
+    padding-top: 115px;
+    background-color: #f5f6f7;
+}
+
+.promo img{
+    border-radius: 8px;
+}
+
+.promo .container{
+    max-width: 1180px;
+}

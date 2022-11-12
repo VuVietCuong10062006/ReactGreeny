@@ -1,0 +1,56 @@
+
+.shop-banner{
+    background: url(../../../assets/image/single-banner.jpg) no-repeat center;
+    background-size: cover !important;
+    padding: 100px 0px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 100px;
+}
+
+.pagination-page-list{
+    display: flex;
+    padding: 0;
+}
+
+.shop-banner::before{
+    position: absolute;
+    content: "";
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to left, rgba(6,23,56,0.6), rgba(17,151,68,0.6));
+    z-index: -1;
+}
+
+.shop-banner .container{
+    max-width: 1180px;
+}
+
+.shop-banner h2{
+    font-size: 38px;
+    margin-bottom: 15px;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 500;
+    line-height: 48px;
+    align-items: center;
+}
+
+.shop-banner .content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    line-height: 24px;
+    color: #fff;
+}
+
+.shop-banner .content .active::before{
+    content: "/";
+    padding: 0 8px;
+}

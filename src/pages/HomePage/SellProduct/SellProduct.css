@@ -1,0 +1,201 @@
+/* Sản phẩm bán chạy */
+.sell{
+    background-color: #f5f6f7;
+    padding-top: 115px;
+}
+
+.sell .container{
+    max-width: 1180px;
+}
+.sell-tittle h2{
+    font-size: 40px;
+    line-height: 48px;
+    color: #39404a;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.sell .product-card{
+    position: relative;
+    margin-bottom: 25px;
+    padding: 15px 18px;
+    border-radius: 8px;
+    background-color: #fff;
+    border: 1px solid #fff;
+    transition: all linear 0.3s;
+}
+
+.sell .product-card:hover{
+    border: 1px solid #119744;
+    box-shadow: 0px 8px 15px 0px rgb(0 0 0 / 10%);
+}
+
+.sell .product-image{
+    position: relative;
+}
+
+.sell .product-label{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.sell .product-label label{
+    font-size: 14px;
+    background-color: #e86121;
+    border-radius: 3px;
+    line-height: 13px;
+    padding: 5px 8px;
+    color: #fff;
+}
+.sell .product-wish{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.sell .product-wish i{
+    font-size: 18px;
+    color: #cccccc;
+    cursor: pointer;
+}
+
+.sell .product-widget{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    width: 100%;
+    bottom: 0px;
+    opacity: 0;
+    transition: all linear 0.3s;
+}
+
+.sell .product-card:hover .product-widget{
+    opacity: 1;
+    bottom: 15px;
+}
+
+.sell .product-video i{
+    display: flex;
+    width: 40px;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    background-color: #119744;
+    color: #fff;
+    border-radius: 8px;
+    margin-right: 20px;
+}
+
+.sell .product-view i{
+    display: flex;
+    width: 40px;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    background-color: #119744;
+    color: #fff;
+    border-radius: 8px;
+}
+
+.sell .product-content{
+    padding-top: 12px;
+    border-top: 1px solid #e8e8e8;
+}
+
+.sell .product-rating{
+    margin-bottom: 3px;
+    height: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sell .product-rating i{
+    font-size: 14px;
+    margin: 0 2px;
+    color: #777777;
+}
+
+.sell .product-rating a{
+    font-size: 14px;
+    line-height: 26px;
+    color: #777777;
+    margin: 0 2px;
+    transition: all linear 0.3s;
+
+}
+
+.sell .product-rating a:hover{
+    color: #119744;
+    text-decoration: underline;
+}
+
+.sell .product-rating .active{
+    color: #ffab10;
+}
+
+.sell .product-name,.product-price {
+    font-size: 16px;
+    line-height: 26px;
+    font-weight: 500;
+    color: #39404a;
+    text-align: center;
+    margin-bottom: 3px;
+}
+
+.sell .product-price{
+    color: #119744;
+    margin-bottom: 13px;
+}
+
+.sell .product-add i{
+    font-size: 14px;
+    margin-right: 5px;
+}
+
+.sell .product-add span{
+    font-size: 15px;
+    line-height: 26px;
+    color: #39404a;
+    transition: all linear 0.3s;
+}
+
+.sell .product-card:hover .product-add span{
+    color: #fff;
+}
+
+.sell .product-add{
+    align-items: center;
+    width: 100%;
+    padding: 6px 0;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    transition: all linear 0.3s;
+}
+
+.sell .product-card:hover .product-add{
+    color: #fff;
+    background-color: #119744;
+}
+
+.sell-btn{
+    text-align: center;
+    margin-top: 25px;
+}
+
+.sell-btn .btn-outline{
+    font-size: 15px;
+    color: #119744;
+    background-color: #fff;
+    padding: 14px 32px;
+    border-radius: 6px;
+    font-weight: 500;
+    border: 2px solid #119744;
+}
+
+.sell-btn .btn-outline:hover{
+    background-color: #119744;
+    color: #fff;
+}

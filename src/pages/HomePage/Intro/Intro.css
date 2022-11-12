@@ -1,0 +1,52 @@
+/* intro */
+
+.intro{
+    padding: 80px 0;
+    background-color: #f8fffa;
+    margin-top: 115px;
+}
+
+.intro .container{
+    max-width: 1180px;
+}
+
+.intro-wrap{
+    display: flex;
+}
+
+.intro-icon{
+    margin-right: 20px;
+}
+
+.intro-icon i{
+    width: 50px;
+    height: 50px;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border: 3px double #119744;
+    color: #119744;
+    background-color: #fff;
+    box-shadow: 0px 15px 35px 0px rgba(0, 0, 0, 0.1);
+    transition: all linear 0.3s;
+}
+
+.intro-icon i:hover{
+    background-color: #119744;
+    color: #fff;
+}
+.intro-content h5 {
+    font-size: 17px;
+    margin-bottom: 8px;
+    text-transform: capitalize;
+    line-height: 26px;
+    color: #39404a;
+}
+
+.intro-content p {
+    font-size: 15px;
+    line-height: 22px;
+    color: #555555;
+}
