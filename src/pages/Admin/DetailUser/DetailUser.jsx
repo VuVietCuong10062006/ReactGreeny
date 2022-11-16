@@ -41,7 +41,7 @@ const DetailUser = () => {
 
   const handleUpdateUser = async () => {
     const resImageUrl = await upLoadImage(image);
-    let imageUrl = [`http://103.237.147.34:8888${resImageUrl}`];
+    let imageUrl = [`//images.weserv.nl?url=http://103.237.147.34:8888${resImageUrl}`];
     let newU = {
       ...getUserId,
       avatar: imageUrl,
