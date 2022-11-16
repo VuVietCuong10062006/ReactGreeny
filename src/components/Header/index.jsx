@@ -70,6 +70,11 @@ const Header = () => {
     setShowCartSideBar(false);
   };
 
+  const handleCart = () => {
+    setShowOverlay(false);
+    setShowCartSideBar(false);
+  };
+
   const handleClickNavSideBar = () => {
     setShowNavSideBar(true);
     setShowOverlay(true);
@@ -362,6 +367,7 @@ const Header = () => {
       </div>
       <CartSideBar
         handleCheckout={handleCheckout}
+        handleCart={handleCart}
         showCartSideBar={showCartSideBar}
         onCloseCartSideBar={handleCloseCartSideBar}
       />

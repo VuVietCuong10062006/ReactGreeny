@@ -179,14 +179,14 @@
       "name": "Thanh long ruột đỏ",
       "price": 99000,
       "image": "https://y5kbp0ifnvobj.vcdn.cloud/uploads/filecloud/2022/July/19/12995-907221658203106-1658203106--400x400.jpg",
-      "count": 4
+      "count": 3
     },
     {
       "id": 7,
       "name": "Chanh không hạt",
       "price": 45000,
       "image": "https://y5kbp0ifnvobj.vcdn.cloud/uploads/filecloud/2022/July/12/12745-906241657597162-1657597162--400x400.jpg",
-      "count": 3
+      "count": 2
     },
     {
       "id": 2,
@@ -208,6 +208,13 @@
       "price": 45000,
       "image": "https://y5kbp0ifnvobj.vcdn.cloud/uploads/filecloud/2022/July/25/13157-603011658737353-1658737353--400x400.jpg",
       "count": 1
+    },
+    {
+      "id": 8,
+      "name": "Su su",
+      "price": 42000,
+      "image": "https://y5kbp0ifnvobj.vcdn.cloud/uploads/filecloud/2022/July/12/12755-784721657599323-1657599323--400x400.jpg",
+      "count": 1
     }
   ],
   "hearts": [
@@ -216,12 +223,6 @@
       "name": "Mồng tơi hữu cơ",
       "price": 25000,
       "image": "https://y5kbp0ifnvobj.vcdn.cloud/uploads/filecloud/2022/July/29/13515-260701659086944-1659086944--400x400.jpeg"
-    },
-    {
-      "id": 9,
-      "name": "Hành lá hữu cơ",
-      "price": 21000,
-      "image": "https://y5kbp0ifnvobj.vcdn.cloud/uploads/filecloud/2022/July/29/13454-965921659084305-1659084305--400x400.jpg"
     },
     {
       "id": 4,
@@ -234,6 +235,12 @@
       "name": "Lá lách romani",
       "price": 32000,
       "image": "https://y5kbp0ifnvobj.vcdn.cloud/uploads/filecloud/2022/July/29/13343-116861659063762-1659063762--400x400.jpg"
+    },
+    {
+      "id": 8,
+      "name": "Su su",
+      "price": 42000,
+      "image": "https://y5kbp0ifnvobj.vcdn.cloud/uploads/filecloud/2022/July/12/12755-784721657599323-1657599323--400x400.jpg"
     }
   ],
   "products": [

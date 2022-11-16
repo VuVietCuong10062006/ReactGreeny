@@ -3,6 +3,11 @@ import "./Blog.css";
 import { Link } from "react-router-dom";
 
 import blog1 from "../../../assets/image/blog-1.jpg";
+import blog2 from "../../../assets/image/blog-2.jpg";
+import blog3 from "../../../assets/image/blog-3.jpg";
+import blog4 from "../../../assets/image/blog-4.jpg";
+import blog5 from "../../../assets/image/blog-5.jpg";
+import blog6 from "../../../assets/image/blog-6.jpg";
 
 const Blog = () => {
     return (
@@ -276,7 +281,7 @@ const Blog = () => {
                                     </li>
                                     <li>
                                         <Link to="/blog-detail-page">
-                                            <img src={blog1} alt="" />
+                                            <img src={blog2} alt="" />
                                         </Link>
                                         <h6>
                                             <Link to="/blog-detail-page">
@@ -289,7 +294,7 @@ const Blog = () => {
                                     </li>
                                     <li>
                                         <Link to="/blog-detail-page">
-                                            <img src={blog1} alt="" />
+                                            <img src={blog3} alt="" />
                                         </Link>
                                         <h6>
                                             <Link to="/blog-detail-page">
@@ -302,7 +307,7 @@ const Blog = () => {
                                     </li>
                                     <li>
                                         <Link to="/blog-detail-page">
-                                            <img src={blog1} alt="" />
+                                            <img src={blog4} alt="" />
                                         </Link>
                                         <h6>
                                             <Link to="/blog-detail-page">
@@ -314,7 +319,7 @@ const Blog = () => {
                                     </li>
                                     <li>
                                         <Link to="/blog-detail-page">
-                                            <img src={blog1} alt="" />
+                                            <img src={blog5} alt="" />
                                         </Link>
                                         <h6>
                                             <Link to="/blog-detail-page">

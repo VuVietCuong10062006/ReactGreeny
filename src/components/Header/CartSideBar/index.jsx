@@ -14,6 +14,7 @@ const CartSideBar = ({
   showCartSideBar,
   onCloseCartSideBar,
   handleCheckout,
+  handleCart
 }) => {
   const productCart = useSelector((state) => state.productCart.productCart);
   const dispatch = useDispatch();
@@ -121,7 +122,7 @@ const CartSideBar = ({
             {formatMoney(totalMoneyProductCart)}
           </span>
         </Link>
-        <Link className="cart-sidebar-cartpage" to="cart-page">
+        <Link onClick={handleCart} className="cart-sidebar-cartpage" to="cart-page">
           <span className="cart-sidebar-checkout-label">Xem Giỏ Hàng</span>
         </Link>
       </div>

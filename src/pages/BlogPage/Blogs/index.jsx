@@ -2,6 +2,13 @@ import React from "react";
 import "./Blogs.css";
 
 import blog1 from "../../../assets/image/blog-1.jpg";
+import blog2 from "../../../assets/image/blog-2.jpg";
+import blog3 from "../../../assets/image/blog-3.jpg";
+import blog4 from "../../../assets/image/blog-4.jpg";
+import blog5 from "../../../assets/image/blog-5.jpg";
+import blog6 from "../../../assets/image/blog-6.jpg";
+// import blog7 from "../../../assets/image/blog-7.jpg";
+// import blog8 from "../../../assets/image/blog-8.jpg";
 import { Link } from "react-router-dom";
 
 const Blogs = () => {
@@ -46,7 +53,7 @@ const Blogs = () => {
                             <div className="col-lg-6 col-md-6">
                                 <div className="blogs-card">
                                     <div className="blogs-image">
-                                        <img src={blog1} alt="" />
+                                        <img src={blog2} alt="" />
                                     </div>
                                     <div className="blogs-content">
                                         <ul>
@@ -79,7 +86,7 @@ const Blogs = () => {
                             <div className="col-lg-6 col-md-6">
                                 <div className="blogs-card">
                                     <div className="blogs-image">
-                                        <img src={blog1} alt="" />
+                                        <img src={blog3} alt="" />
                                     </div>
                                     <div className="blogs-content">
                                         <ul>
@@ -111,7 +118,7 @@ const Blogs = () => {
                             <div className="col-lg-6 col-md-6">
                                 <div className="blogs-card">
                                     <div className="blogs-image">
-                                        <img src={blog1} alt="" />
+                                        <img src={blog4} alt="" />
                                     </div>
                                     <div className="blogs-content">
                                         <ul>
@@ -144,7 +151,7 @@ const Blogs = () => {
                             <div className="col-lg-6 col-md-6">
                                 <div className="blogs-card">
                                     <div className="blogs-image">
-                                        <img src={blog1} alt="" />
+                                        <img src={blog5} alt="" />
                                     </div>
                                     <div className="blogs-content">
                                         <ul>
@@ -177,7 +184,7 @@ const Blogs = () => {
                             <div className="col-lg-6 col-md-6">
                                 <div className="blogs-card">
                                     <div className="blogs-image">
-                                        <img src={blog1} alt="" />
+                                        <img src={blog6} alt="" />
                                     </div>
                                     <div className="blogs-content">
                                         <ul>
@@ -272,7 +279,7 @@ const Blogs = () => {
                                 </li>
                                 <li>
                                     <Link to="/blog-detail-page">
-                                        <img src={blog1} alt="" />
+                                        <img src={blog2} alt="" />
                                     </Link>
                                     <h6>
                                         <Link to="/blog-detail-page">
@@ -284,7 +291,7 @@ const Blogs = () => {
                                 </li>
                                 <li>
                                     <Link to="/blog-detail-page">
-                                        <img src={blog1} alt="" />
+                                        <img src={blog3} alt="" />
                                     </Link>
                                     <h6>
                                         <Link to="/blog-detail-page">
@@ -296,7 +303,7 @@ const Blogs = () => {
                                 </li>
                                 <li>
                                     <Link to="/blog-detail-page">
-                                        <img src={blog1} alt="" />
+                                        <img src={blog4} alt="" />
                                     </Link>
                                     <h6>
                                         <Link to="/blog-detail-page">
@@ -308,7 +315,7 @@ const Blogs = () => {
                                 </li>
                                 <li>
                                     <Link to="/blog-detail-page">
-                                        <img src={blog1} alt="/" />
+                                        <img src={blog5} alt="/" />
                                     </Link>
                                     <h6>
                                         <Link to="/blog-detail-page">
