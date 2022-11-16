@@ -92,6 +92,22 @@ const productApi = {
     const url = `/carts/${id}`;
     return axiosClient.delete(url, id);
   },
+  getProductHeart(){
+    const url = "/hearts";
+    return axiosClient.get(url);
+  },
+  addProductHeart(data){
+    const url = "/hearts";
+    return axiosClient.post(url, data);
+  },
+  updateProductHeart(data){
+    const url = `/hearts/${data.id}`;
+    return axiosClient.put(url, data);
+  },
+  deleteProductHeart(id){
+    const url = `/hearts/${id}`;
+    return axiosClient.delete(url, id);
+  },
   getAuth(){
     const url = `/auth`;
     return axiosClient.get(url);

@@ -14,19 +14,27 @@ import Overlay from "../Overlay";
 // import axiosClient from "../../api/axiosClient";
 import productApi from "../../api/productApi";
 import useDebounce from "../../hooks/useDebounce";
+import { getProductHeart } from "../../redux/productHeartSlice";
 // import { ToastContainer, toast } from "react-toastify";
 
 const Header = () => {
   const navigate = useNavigate();
   const productCart = useSelector((state) => state.productCart.productCart);
+  const productHeart = useSelector((state) => state.productHeart.productHeart);
+
   const auth = useSelector((state) => state.auth.auth);
   const dispatch = useDispatch();
+  
   useEffect(() => {
     dispatch(getProduct());
   }, []);
 
   useEffect(() => {
     dispatch(getAuth());
+  }, []);
+
+  useEffect(() => {
+    dispatch(getProductHeart());
   }, []);
 
   const [inputSearch, setInputSearch] = useState("");
@@ -49,7 +57,6 @@ const Header = () => {
       return;
     }
     productApi.searchProduct(debounce).then((data) => {
-      console.log(data);
       setProductSearch(data);
     });
   }, [debounce]);
@@ -133,7 +140,7 @@ const Header = () => {
                     onClick={handleShowMenuAccount}
                     className="header-account header-account-clone"
                   >
-                    <img src={avatar} alt="Account" />
+                    <img src="https://icon-library.com/images/no-image-icon/no-image-icon-0.jpg" alt="Account" />
                   </div>
                   <div
                     className={
@@ -143,17 +150,19 @@ const Header = () => {
                     }
                   >
                     <div className="info">
-                      <img src={avatar} alt="" />
+                      <img src="https://icon-library.com/images/no-image-icon/no-image-icon-0.jpg" alt="" />
                       <h4>Vũ Việt Cường</h4>
                       <p>vuvietcuong@gmail.com</p>
                     </div>
                     <ul>
-                      <Link to="/admin">
-                        <li>
-                          <i className="fa-solid fa-user-lock"></i>
-                          <span>Admin</span>
-                        </li>
-                      </Link>
+                      {auth.roles.includes("ADMIN") && (
+                        <Link to="/admin">
+                          <li>
+                            <i className="fa-solid fa-user-lock"></i>
+                            <span>Admin</span>
+                          </li>
+                        </Link>
+                      )}
                       <li onClick={handleLogout} className="logout">
                         <i className="fa-solid fa-arrow-up-from-bracket"></i>
                         <span>Đăng xuất</span>
@@ -199,12 +208,14 @@ const Header = () => {
                       <p>vuvietcuong@gmail.com</p>
                     </div>
                     <ul>
-                      <Link to="/admin">
-                        <li>
-                          <i className="fa-solid fa-user-lock"></i>
-                          <span>Admin</span>
-                        </li>
-                      </Link>
+                      {auth.roles.includes("ADMIN") && (
+                        <Link to="/admin">
+                          <li>
+                            <i className="fa-solid fa-user-lock"></i>
+                            <span>Admin</span>
+                          </li>
+                        </Link>
+                      )}
                       <li onClick={handleLogout} className="logout">
                         <i className="fa-solid fa-arrow-up-from-bracket"></i>
                         <span>Đăng xuất</span>
@@ -266,7 +277,7 @@ const Header = () => {
                     className="fa-solid fa-heart"
                   ></i>
                   <div className="header-heart-number">
-                    <p>1</p>
+                    <p>{productHeart.length}</p>
                   </div>
                 </a>
                 <a className="header-cart">

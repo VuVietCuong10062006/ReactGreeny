@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import "./CartSideBar.css";
-import productApi from "../../../api/productApi";
 import { useDispatch, useSelector } from "react-redux";
 import {
   deleteProduct,

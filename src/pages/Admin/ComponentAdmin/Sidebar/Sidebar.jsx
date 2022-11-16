@@ -6,25 +6,24 @@ import ExitToAppIcon from "@mui/icons-material/ExitToApp";
 import { Link } from "react-router-dom";
 
 const Sidebar = () => {
-  
-  const handleLogout = () => {
-    
-  };
+  const handleLogout = () => {};
 
   return (
     <div className="sidebar">
       <div className="top">
-        <Link to="/admin" style={{ textDecoration: "none" }}>
-          <span className="logo">AdminGreeny</span>
+        <Link to="/" style={{ textDecoration: "none" }}>
+          <span className="logo">Greeny</span>
         </Link>
       </div>
       <div className="center">
         <ul>
           <p className="title">MAIN</p>
-          <li>
-            <DashboardIcon className="icon" />
-            <span>Dashboard</span>
-          </li>
+          <Link to="/admin">
+            <li>
+              <DashboardIcon className="icon" />
+              <span>Dashboard</span>
+            </li>
+          </Link>
           <p className="title">LISTS</p>
           <Link to="/admin/users" style={{ textDecoration: "none" }}>
             <li>

@@ -10,8 +10,8 @@
       "phone": "0336294777",
       "password": "123456",
       "roles": [
-        "USER",
-        "ADMIN"
+        "ADMIN",
+        "USER"
       ]
     },
     {
@@ -22,7 +22,10 @@
       "name": "Bùi Trung Hiếu",
       "email": "trunhi@gmail.com",
       "phone": "12345",
-      "password": "123456"
+      "password": "123456",
+      "roles": [
+        "USER"
+      ]
     },
     {
       "id": 4,
@@ -32,7 +35,10 @@
       "name": "Lại Cao Đài",
       "email": "laicaodai@gmail.com",
       "phone": "123456",
-      "password": "123456"
+      "password": "123456",
+      "roles": [
+        "USER"
+      ]
     },
     {
       "avatar": [
@@ -42,17 +48,23 @@
       "email": "phanduyhau@gmail.com",
       "phone": "123456789",
       "password": "123456",
-      "id": 5
+      "id": 5,
+      "roles": [
+        "USER"
+      ]
     },
     {
       "id": 6,
       "avatar": [
-        "http://103.237.147.34:8888/api/v1/users/1/files/103"
+        "//images.weserv.nl?url=http://103.237.147.34:8888/api/v1/users/1/files/137"
       ],
-      "name": "Vũ Việt Cường 3",
-      "email": "vuvietcuong3@gmail.com",
-      "phone": "123456789",
-      "password": "123456"
+      "name": "fsdfdsfds",
+      "email": "fesdfdfsd",
+      "phone": "fdsfdsfsf",
+      "password": "fsdfdsfsdf",
+      "roles": [
+        "USER"
+      ]
     },
     {
       "avatar": [
@@ -62,34 +74,38 @@
       "email": "fsfs",
       "phone": "fsdfs",
       "password": "fsdfs",
-      "id": 7
+      "id": 7,
+      "roles": [
+        "USER"
+      ]
     },
     {
-      "id": 8,
       "avatar": [
-        "http://103.237.147.34:8888/api/v1/users/1/files/127"
+        "//images.weserv.nl?url=http://103.237.147.34:8888/api/v1/users/1/files/138"
       ],
-      "name": "Vũ Việt Cường4",
-      "email": "vuvietcuong4@gmail.com",
-      "phone": "213213",
-      "password": "123456"
-    },
-    {
-      "name": "VuVietCuong5@gmail.com",
-      "email": "vuvietcuong5@gmail.com",
-      "phone": "",
-      "avatar": "https://media.techmaster.vn/api/static/crop/bv9jp4k51co7nj2mhht0",
-      "password": "123456",
-      "id": 9
+      "name": "fsdfds",
+      "email": "dsddfsf",
+      "phone": "fsdfsdfd",
+      "password": "fsdfdsf",
+      "id": 9,
+      "roles": [
+        "USER"
+      ]
     }
   ],
   "auth": {
-    "name": "VuVietCuong5@gmail.com",
-    "email": "vuvietcuong5@gmail.com",
-    "phone": "",
-    "avatar": "https://media.techmaster.vn/api/static/crop/bv9jp4k51co7nj2mhht0",
+    "id": 2,
+    "avatar": [
+      "http://103.237.147.34:8888/api/v1/users/1/files/86"
+    ],
+    "name": "Vũ Việt Cường",
+    "email": "vuvietcuong@gmail.com",
+    "phone": "0336294777",
     "password": "123456",
-    "id": 9
+    "roles": [
+      "ADMIN",
+      "USER"
+    ]
   },
   "tags": [
     {
@@ -163,14 +179,7 @@
       "name": "Thanh long ruột đỏ",
       "price": 99000,
       "image": "https://y5kbp0ifnvobj.vcdn.cloud/uploads/filecloud/2022/July/19/12995-907221658203106-1658203106--400x400.jpg",
-      "count": 3
-    },
-    {
-      "id": 10,
-      "name": "Bông cải xanh",
-      "price": 45000,
-      "image": "https://y5kbp0ifnvobj.vcdn.cloud/uploads/filecloud/2022/July/25/13157-603011658737353-1658737353--400x400.jpg",
-      "count": 3
+      "count": 4
     },
     {
       "id": 7,
@@ -192,6 +201,39 @@
       "price": 25000,
       "image": "https://y5kbp0ifnvobj.vcdn.cloud/uploads/filecloud/2022/July/29/13515-260701659086944-1659086944--400x400.jpeg",
       "count": 2
+    },
+    {
+      "id": 10,
+      "name": "Bông cải xanh",
+      "price": 45000,
+      "image": "https://y5kbp0ifnvobj.vcdn.cloud/uploads/filecloud/2022/July/25/13157-603011658737353-1658737353--400x400.jpg",
+      "count": 1
+    }
+  ],
+  "hearts": [
+    {
+      "id": 3,
+      "name": "Mồng tơi hữu cơ",
+      "price": 25000,
+      "image": "https://y5kbp0ifnvobj.vcdn.cloud/uploads/filecloud/2022/July/29/13515-260701659086944-1659086944--400x400.jpeg"
+    },
+    {
+      "id": 9,
+      "name": "Hành lá hữu cơ",
+      "price": 21000,
+      "image": "https://y5kbp0ifnvobj.vcdn.cloud/uploads/filecloud/2022/July/29/13454-965921659084305-1659084305--400x400.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Lá trà xanh",
+      "price": 63000,
+      "image": "https://y5kbp0ifnvobj.vcdn.cloud/uploads/filecloud/2022/July/19/13011-895661658204656-1658204656--400x400.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Lá lách romani",
+      "price": 32000,
+      "image": "https://y5kbp0ifnvobj.vcdn.cloud/uploads/filecloud/2022/July/29/13343-116861659063762-1659063762--400x400.jpg"
     }
   ],
   "products": [
@@ -707,20 +749,20 @@
     },
     {
       "images": [
-        "//images.weserv.nl?url=http://103.237.147.34:8888/api/v1/users/1/files/135",
-        "//images.weserv.nl?url=http://103.237.147.34:8888/api/v1/users/1/files/135",
-        "//images.weserv.nl?url=http://103.237.147.34:8888/api/v1/users/1/files/135",
-        "//images.weserv.nl?url=http://103.237.147.34:8888/api/v1/users/1/files/135",
-        "//images.weserv.nl?url=http://103.237.147.34:8888/api/v1/users/1/files/135"
+        "http://103.237.147.34:8888/api/v1/users/1/files/136",
+        "http://103.237.147.34:8888/api/v1/users/1/files/136",
+        "http://103.237.147.34:8888/api/v1/users/1/files/136",
+        "http://103.237.147.34:8888/api/v1/users/1/files/136",
+        "http://103.237.147.34:8888/api/v1/users/1/files/136"
       ],
-      "name": "ewdawd",
-      "price": "sfdsfsd",
-      "category": "dasda",
-      "tag": "dasd",
-      "rating": "dasda",
+      "name": "tinh",
+      "price": "abc",
+      "category": "tinh",
+      "tag": "tinh",
+      "rating": "12334",
       "description": "description",
       "voted": 10,
-      "id": 31
+      "id": 32
     }
   ]
 }

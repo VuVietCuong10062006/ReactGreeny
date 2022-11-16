@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Shop.css";
 import { useDispatch, useSelector } from "react-redux";
 import { getProduct, addProduct } from "../../../redux/productCartSlice";
@@ -7,15 +7,18 @@ import formatMoney from "../../../utils/utils";
 import { toast, ToastContainer } from "react-toastify";
 import { Link } from "react-router-dom";
 import Pagination from "../../../components/Panigation/Panigation";
-import { isEmpty } from "../../../utils/utils";
+// import { isEmpty } from "../../../utils/utils";
+import { addProductHeart, getProductHeart } from "../../../redux/productHeartSlice";
 
 const Shop = () => {
   const [ratings, setRatings] = useState([]);
   const [tags, setTags] = useState([]);
   const [categorys, setCategorys] = useState([]);
-  const dispatch = useDispatch();
   const [products, setProducts] = useState([]);
+  const dispatch = useDispatch();
   const productCart = useSelector((state) => state.productCart.productCart);
+  const productHeart = useSelector((state) => state.productHeart.productHeart);
+
 
   const [checkedTag, setCheckedTag] = useState();
   const [checkedCategory, setCheckedCategory] = useState();
@@ -28,8 +31,13 @@ const Shop = () => {
 
   const [currentPage, setCurrentPage] = useState(1);
 
+
   useEffect(() => {
     dispatch(getProduct());
+  }, []);
+
+  useEffect(() => {
+    dispatch(getProductHeart());
   }, []);
 
   useEffect(() => {
@@ -113,6 +121,29 @@ const Shop = () => {
     let ratingChange = e.target.value;
     setCheckedRating(ratingChange);
     setFilter({ ...filter, rating: ratingChange });
+  };
+
+  const handleAddProductHeart = (id) => {
+    const productItem = products.find((p) => p.id === id);
+    // Kiểm tra sản phẩm đã có trong giở hàng hay chưa?
+    const isExist = productHeart.some((p) => p.id === id);
+    if (isExist) {
+      toast.warning("Sản phẩm đã được yêu thích", {
+        position: toast.POSITION.TOP_CENTER,
+      });
+      return;
+    }
+    // Thêm sản phẩm vào giỏ
+    const newProductHeartItem = {
+      id: productItem.id,
+      name: productItem.name,
+      price: productItem.price,
+      image: productItem.images[0],
+    };
+    dispatch(addProductHeart(newProductHeartItem));
+    toast.success("thêm vào danh mục yêu thích thành công", {
+      position: toast.POSITION.TOP_CENTER,
+    });
   };
 
   const handleAddProductCart = (id) => {
@@ -325,7 +356,7 @@ const Shop = () => {
                         <div className="product-label">
                           <label>{product.tag}</label>
                         </div>
-                        <div className="product-wish">
+                        <div onClick={() => handleAddProductHeart(product.id)} className="product-wish">
                           <i className="fa-solid fa-heart"></i>
                         </div>
                         <Link to={`/${product.id}`}>

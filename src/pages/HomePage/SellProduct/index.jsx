@@ -1,24 +1,28 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./SellProduct.css";
-// import Context from "../../../context/Context";
-// import { addProduct } from "../../../store/actions";
+
 import { useDispatch, useSelector } from "react-redux";
 import { getProduct, addProduct } from "../../../redux/productCartSlice";
 import { Link } from "react-router-dom";
 import formatMoney from "../../../utils/utils";
 import productApi from "../../../api/productApi";
-import { toast, ToastContainer } from "react-toastify";
+import { toast } from "react-toastify";
+import { addProductHeart, getProductHeart } from "../../../redux/productHeartSlice";
 
 const SellProduct = () => {
-  // const { products, productCartItem, dispatchProducCart } = useContext(Context);
   const [productSell, setProductSell] = useState([]);
   const dispatch = useDispatch();
   const [products, setProducts] = useState([]);
   const productCart = useSelector((state) => state.productCart.productCart);
+  const productHeart = useSelector((state) => state.productHeart.productHeart);
 
   useEffect(() => {
     dispatch(getProduct());
   }, []); 
+
+  useEffect(() => {
+    dispatch(getProductHeart());
+  }, []);
 
   useEffect(() => {
     productApi.getProductSell().then((data) => {
@@ -32,9 +36,29 @@ const SellProduct = () => {
     });
   }, []);
 
-  //   let productSells = products.filter((p) => {
-  //     return p.tag == "Sale";
-  //   });
+  
+  const handleAddProductHeart = (id) => {
+    const productItem = products.find((p) => p.id === id);
+    // Kiểm tra sản phẩm đã có trong giở hàng hay chưa?
+    const isExist = productHeart.some((p) => p.id === id);
+    if (isExist) {
+      toast.warning("Sản phẩm đã được yêu thích", {
+        position: toast.POSITION.TOP_CENTER,
+      });
+      return;
+    }
+    // Thêm sản phẩm vào giỏ
+    const newProductHeartItem = {
+      id: productItem.id,
+      name: productItem.name,
+      price: productItem.price,
+      image: productItem.images[0],
+    };
+    dispatch(addProductHeart(newProductHeartItem));
+    toast.success("thêm vào danh mục yêu thích thành công", {
+      position: toast.POSITION.TOP_CENTER,
+    });
+  };
 
   const handleAddProductCart = (id) => {
     const productItem = products.find((p) => p.id === id);
@@ -81,7 +105,7 @@ const SellProduct = () => {
                     <div className="product-label">
                       <label>{product.tag}</label>
                     </div>
-                    <div className="product-wish">
+                    <div onClick={() => handleAddProductHeart(product.id)} className="product-wish">
                       <i className="fa-solid fa-heart"></i>
                     </div>
                     <Link to={`${product.id}`}>
@@ -155,10 +179,10 @@ const SellProduct = () => {
           <div className="row">
             <div className="col-lg-12">
               <div className="sell-btn">
-                <a className="btn btn-outline" href="./page/shop.html">
+                <Link to="shop-page" className="btn btn-outline">
                   <i className="fa-solid fa-eye"></i>
                   <span>XEM THÊM</span>
-                </a>
+                </Link>
               </div>
             </div>
           </div>
