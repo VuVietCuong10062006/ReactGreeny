@@ -1,13 +1,18 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import productApi from "../api/productApi";
 
-export const getUsers = createAsyncThunk("auth/getUsers", async () => {
+export const getUsers = createAsyncThunk("users/getUsers", async () => {
   const res = await productApi.getUsers();
   return res;
 });
 
+export const getUsersbyId = createAsyncThunk("users/getUsersbyId", async (id) => {
+  const res = await productApi.getUserById(id);
+  return res;
+});
+
 export const addUsers = createAsyncThunk(
-  "productCart/addProduct",
+  "users/addUsers",
   async (data) => {
     const res = await productApi.addUsers(data);
     return res;
@@ -15,7 +20,7 @@ export const addUsers = createAsyncThunk(
 );
 
 export const updateUsers = createAsyncThunk(
-  "productCart/updateProduct",
+  "users/updateUsers",
   async (data) => {
     const res = await productApi.updateUsers(data);
     return res;
@@ -23,7 +28,7 @@ export const updateUsers = createAsyncThunk(
 );
 
 export const deleteUsers = createAsyncThunk(
-  "productCart/deleteProduct",
+  "users/deleteUsers",
   async (id) => {
     await productApi.deleteUsers(id);
     return id;
@@ -33,16 +38,27 @@ const usersSlice = createSlice({
   name: "users",
   initialState: {
     users: [],
+    usersId:{},
   },
   reducers: {},
   extraReducers: (builder) => {
     builder.addCase(getUsers.fulfilled, (state, action) => {
       state.users = action.payload;
     });
+    builder.addCase(getUsersbyId.fulfilled, (state, action) => {
+      state.usersId = action.payload;
+    });
     builder.addCase(addUsers.fulfilled, (state, action) => {
       state.users.push(action.payload);
     });
     builder.addCase(updateUsers.fulfilled, (state, action) => {
+      // const newUser = action.payload;
+      // state.users = state.users.map(user => {
+      //   if (user.id === newUser.id) {
+      //     user = newUser
+      //   }
+      //   return user
+      // })
       let index = state.users.findIndex(
         (p) => p.id === action.payload.id
       );

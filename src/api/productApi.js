@@ -8,8 +8,24 @@ const productApi = {
     const url = "/products";
     return axiosClient.get(url);
   },
+  addProduct(data){
+    const url = "/products";
+    return axiosClient.post(url, data);
+  },
+  deleteProduct(id){
+    const url = `/products/${id}`;
+    return axiosClient.delete(url, id);
+  },
   getProductById(id) {
     const url = `/products/${id}`;
+    return axiosClient.get(url);
+  },
+  updateProduct(data){
+    const url = `/products/${data.id}`;
+    return axiosClient.put(url, data);
+  },
+  getUserById(id) {
+    const url = `/users/${id}`;
     return axiosClient.get(url);
   },
   getProductFeature() {
@@ -101,7 +117,7 @@ const productApi = {
     return axiosClient.put(url, data);
   },
   deleteUsers(id){
-    const url = `/carts/${id}`;
+    const url = `/users/${id}`;
     return axiosClient.delete(url, id);
   },
 };

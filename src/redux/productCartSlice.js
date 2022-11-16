@@ -27,19 +27,23 @@ export const updateProduct = createAsyncThunk(
 );
 
 export const deleteProduct = createAsyncThunk(
-    "productCart/deleteProduct",
-    async (id) => {
-       await productApi.deleteProductCart(id);
-      return id;
-    }
-  );
+  "productCart/deleteProduct",
+  async (id) => {
+    await productApi.deleteProductCart(id);
+    return id;
+  }
+);
 
 const productCartSlice = createSlice({
   name: "productCart",
   initialState: {
     productCart: [],
   },
-  reducers: {},
+  reducers: {
+    setProductCart(state, action) {
+      state.productCart = action.payload;
+    },
+  },
   extraReducers: (builder) => {
     builder.addCase(getProduct.fulfilled, (state, action) => {
       state.productCart = action.payload;
@@ -48,15 +52,18 @@ const productCartSlice = createSlice({
       state.productCart.push(action.payload);
     });
     builder.addCase(updateProduct.fulfilled, (state, action) => {
-        let index = state.productCart.findIndex(p => p.id === action.payload.id);
-            state.productCart[index] = action.payload
+      let index = state.productCart.findIndex(
+        (p) => p.id === action.payload.id
+      );
+      state.productCart[index] = action.payload;
     });
     builder.addCase(deleteProduct.fulfilled, (state, action) => {
-        let index = state.productCart.findIndex(p => p.id === action.payload);
-        state.productCart.splice(index, 1);
-    })
-
+      let index = state.productCart.findIndex((p) => p.id === action.payload);
+      state.productCart.splice(index, 1);
+    });
   },
 });
+
+export const { setProductCart } = productCartSlice.actions;
 
 export default productCartSlice.reducer;

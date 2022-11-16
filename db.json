@@ -1,44 +1,84 @@
 {
   "users": [
     {
-      "id": 1,
-      "name": "sdf",
-      "email": "fsd@gmail.com",
-      "phone": "",
-      "avatar": "https://media.techmaster.vn/api/static/crop/bv9jp4k51co7nj2mhht0",
+      "id": 2,
+      "avatar": [
+        "http://103.237.147.34:8888/api/v1/users/1/files/86"
+      ],
+      "name": "Vũ Việt Cường",
+      "email": "vuvietcuong@gmail.com",
+      "phone": "0336294777",
       "password": "123456"
     },
     {
-      "name": "vuvietcuong2",
-      "email": "vuvietcuong2@gmail.com",
-      "phone": "",
-      "avatar": "https://media.techmaster.vn/api/static/crop/bv9jp4k51co7nj2mhht0",
-      "password": "123456",
-      "id": 2
+      "id": 3,
+      "avatar": [
+        "http://103.237.147.34:8888/api/v1/users/1/files/87"
+      ],
+      "name": "Bùi Trung Hiếu",
+      "email": "trunhi@gmail.com",
+      "phone": "12345",
+      "password": "123456"
     },
     {
-      "name": "vuvietcuong",
-      "email": "vuvietcuong@gmail.com",
-      "phone": "",
-      "avatar": "https://media.techmaster.vn/api/static/crop/bv9jp4k51co7nj2mhht0",
-      "password": "123456",
-      "id": 3
+      "id": 4,
+      "avatar": [
+        "http://103.237.147.34:8888/api/v1/users/1/files/88"
+      ],
+      "name": "Lại Cao Đài",
+      "email": "laicaodai@gmail.com",
+      "phone": "123456",
+      "password": "123456"
     },
     {
-      "name": "vuvietcuong3",
+      "avatar": [
+        "http://103.237.147.34:8888/api/v1/users/1/files/89"
+      ],
+      "name": "Phan Duy Hậu",
+      "email": "phanduyhau@gmail.com",
+      "phone": "123456789",
+      "password": "123456",
+      "id": 5
+    },
+    {
+      "id": 6,
+      "avatar": [
+        "http://103.237.147.34:8888/api/v1/users/1/files/103"
+      ],
+      "name": "Vũ Việt Cường 3",
       "email": "vuvietcuong3@gmail.com",
-      "phone": "",
-      "avatar": "https://media.techmaster.vn/api/static/crop/bv9jp4k51co7nj2mhht0",
+      "phone": "123456789",
+      "password": "123456"
+    },
+    {
+      "avatar": [
+        "http://103.237.147.34:8888/api/v1/users/1/files/124"
+      ],
+      "name": "Vũ Việt Cường3",
+      "email": "vuvietcuong3@gmail.com",
+      "phone": "3124234",
       "password": "123456",
-      "id": 4
+      "id": 7
+    },
+    {
+      "id": 8,
+      "avatar": [
+        "http://103.237.147.34:8888/api/v1/users/1/files/126"
+      ],
+      "name": "Vũ Việt Cường 4",
+      "email": "vuvietcuong4@gmail.com",
+      "phone": "1231231",
+      "password": "123456"
     }
   ],
   "auth": {
-    "id": 1,
-    "name": "sdf",
-    "email": "fsd@gmail.com",
-    "phone": "",
-    "avatar": "https://media.techmaster.vn/api/static/crop/bv9jp4k51co7nj2mhht0",
+    "id": 2,
+    "avatar": [
+      "http://103.237.147.34:8888/api/v1/users/1/files/86"
+    ],
+    "name": "Vũ Việt Cường",
+    "email": "vuvietcuong@gmail.com",
+    "phone": "0336294777",
     "password": "123456"
   },
   "tags": [
@@ -109,20 +149,6 @@
   ],
   "carts": [
     {
-      "id": 2,
-      "name": "Lá lách romani",
-      "price": 32000,
-      "image": "https://y5kbp0ifnvobj.vcdn.cloud/uploads/filecloud/2022/July/29/13343-116861659063762-1659063762--400x400.jpg",
-      "count": 2
-    },
-    {
-      "id": 4,
-      "name": "Lá trà xanh",
-      "price": 63000,
-      "image": "https://y5kbp0ifnvobj.vcdn.cloud/uploads/filecloud/2022/July/19/13011-895661658204656-1658204656--400x400.jpg",
-      "count": 2
-    },
-    {
       "id": 11,
       "name": "Thanh long ruột đỏ",
       "price": 99000,
@@ -134,20 +160,27 @@
       "name": "Bông cải xanh",
       "price": 45000,
       "image": "https://y5kbp0ifnvobj.vcdn.cloud/uploads/filecloud/2022/July/25/13157-603011658737353-1658737353--400x400.jpg",
-      "count": 1
-    },
-    {
-      "id": 1,
-      "name": "Cải thìa hữu cơ",
-      "price": 25000,
-      "image": "https://y5kbp0ifnvobj.vcdn.cloud/uploads/filecloud/2022/July/27/13259-647981658935278-1658935278--400x400.png",
-      "count": 1
+      "count": 3
     },
     {
       "id": 7,
       "name": "Chanh không hạt",
       "price": 45000,
       "image": "https://y5kbp0ifnvobj.vcdn.cloud/uploads/filecloud/2022/July/12/12745-906241657597162-1657597162--400x400.jpg",
+      "count": 1
+    },
+    {
+      "id": 2,
+      "name": "Lá lách romani",
+      "price": 32000,
+      "image": "https://y5kbp0ifnvobj.vcdn.cloud/uploads/filecloud/2022/July/29/13343-116861659063762-1659063762--400x400.jpg",
+      "count": 1
+    },
+    {
+      "id": 3,
+      "name": "Mồng tơi hữu cơ",
+      "price": 25000,
+      "image": "https://y5kbp0ifnvobj.vcdn.cloud/uploads/filecloud/2022/July/29/13515-260701659086944-1659086944--400x400.jpeg",
       "count": 1
     }
   ],

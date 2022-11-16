@@ -7,7 +7,6 @@ import { useState } from "react";
 import productApi from "../../../api/productApi";
 import formatMoney from "../../../utils/utils";
 import { toast, ToastContainer } from "react-toastify";
-import ModalLayout from "../../../components/Modal";
 
 const Feature = () => {
   const [productFeatures, setProductFeature] = useState([]);
@@ -58,17 +57,13 @@ const Feature = () => {
       position: toast.POSITION.TOP_CENTER,
     });
   };  
-  // const [isShowModal, setIsShowModal] = useState(false)
-  // const modalRef = useRef()
-  const handleClickVideo = (id) => {
-    console.log(id)
+
+  const handleClickVideo = () => {
+    
   }
 
   return (
     <>
-    {/* <ModalLayout isShow={isShowModal} ref={modalRef} >
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates esse eaque aliquam soluta quidem id.</p>
-    </ModalLayout> */}
       <section className="feature">
         <div className="container">
           <div className="row">

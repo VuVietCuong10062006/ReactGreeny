@@ -18,7 +18,7 @@ const SellProduct = () => {
 
   useEffect(() => {
     dispatch(getProduct());
-  }, []);
+  }, []); 
 
   useEffect(() => {
     productApi.getProductSell().then((data) => {

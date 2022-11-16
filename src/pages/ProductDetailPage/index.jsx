@@ -25,7 +25,6 @@ const ProductDetailPage = () => {
   useEffect(() => {
     dispatch(getProduct());
   }, []);
-
   const handleAddProductCart = () => {
     // Kiểm tra sản phẩm đã có trong giở hàng hay chưa?
     const isExist = productCart.some((product) => product.id === +productId);

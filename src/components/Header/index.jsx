@@ -5,7 +5,7 @@ import user from "../../assets/image/user.png";
 import avatar from "../../assets/image/avatar.jpg";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { getProduct, } from "../../redux/productCartSlice";
+import { getProduct } from "../../redux/productCartSlice";
 import { getAuth, authLogout } from "../../redux/authSlice";
 import CartSideBar from "./CartSideBar";
 import HeartSideBar from "./HeartSideBar";
@@ -56,7 +56,7 @@ const Header = () => {
 
   const handleLogout = () => {
     dispatch(authLogout());
-    navigate("/")
+    navigate("/");
   };
   const handleCheckout = () => {
     setShowOverlay(false);
@@ -148,6 +148,12 @@ const Header = () => {
                       <p>vuvietcuong@gmail.com</p>
                     </div>
                     <ul>
+                      <Link to="/admin">
+                        <li>
+                          <i className="fa-solid fa-user-lock"></i>
+                          <span>Admin</span>
+                        </li>
+                      </Link>
                       <li onClick={handleLogout} className="logout">
                         <i className="fa-solid fa-arrow-up-from-bracket"></i>
                         <span>Đăng xuất</span>
@@ -172,7 +178,10 @@ const Header = () => {
               {auth.id && (
                 <div onClick={handleShowMenuAccount} className="account">
                   <div className="header-account">
-                    <img src={avatar} alt="Account" />
+                    <img
+                      src="https://icon-library.com/images/no-image-icon/no-image-icon-0.jpg"
+                      alt="Account"
+                    />
                   </div>
                   <div
                     className={
@@ -182,11 +191,20 @@ const Header = () => {
                     }
                   >
                     <div className="info">
-                      <img src={avatar} alt="" />
+                      <img
+                        src="https://icon-library.com/images/no-image-icon/no-image-icon-0.jpg"
+                        alt=""
+                      />
                       <h4>Vũ Việt Cường</h4>
                       <p>vuvietcuong@gmail.com</p>
                     </div>
                     <ul>
+                      <Link to="/admin">
+                        <li>
+                          <i className="fa-solid fa-user-lock"></i>
+                          <span>Admin</span>
+                        </li>
+                      </Link>
                       <li onClick={handleLogout} className="logout">
                         <i className="fa-solid fa-arrow-up-from-bracket"></i>
                         <span>Đăng xuất</span>
