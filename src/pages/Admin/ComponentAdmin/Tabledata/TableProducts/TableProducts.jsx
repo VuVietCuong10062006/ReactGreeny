@@ -30,7 +30,7 @@ const TableProducts = () => {
       renderCell: (param) => {
         return (
           <div className="cellWithImg">
-            <img className="cellImg" src={param.row.images[0]} alt="avatar" />
+            <img className="cellImg" src={`//images.weserv.nl?url=${param.row.images[0]}`} alt="avatar" />
           </div>
         );
       },

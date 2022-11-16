@@ -8,7 +8,11 @@
       "name": "Vũ Việt Cường",
       "email": "vuvietcuong@gmail.com",
       "phone": "0336294777",
-      "password": "123456"
+      "password": "123456",
+      "roles": [
+        "USER",
+        "ADMIN"
+      ]
     },
     {
       "id": 3,
@@ -52,12 +56,12 @@
     },
     {
       "avatar": [
-        "http://103.237.147.34:8888/api/v1/users/1/files/124"
+        "//images.weserv.nl?url=http://103.237.147.34:8888/api/v1/users/1/files/134"
       ],
-      "name": "Vũ Việt Cường3",
-      "email": "vuvietcuong3@gmail.com",
-      "phone": "3124234",
-      "password": "123456",
+      "name": "fsdf",
+      "email": "fsfs",
+      "phone": "fsdfs",
+      "password": "fsdfs",
       "id": 7
     },
     {
@@ -71,25 +75,21 @@
       "password": "123456"
     },
     {
-      "avatar": [
-        "http://103.237.147.34:8888/api/v1/users/1/files/128"
-      ],
-      "name": "fsdfs",
-      "email": "dfsdfdsf",
-      "phone": "fsdfsf",
-      "password": "fdsfs",
+      "name": "VuVietCuong5@gmail.com",
+      "email": "vuvietcuong5@gmail.com",
+      "phone": "",
+      "avatar": "https://media.techmaster.vn/api/static/crop/bv9jp4k51co7nj2mhht0",
+      "password": "123456",
       "id": 9
     }
   ],
   "auth": {
-    "id": 2,
-    "avatar": [
-      "http://103.237.147.34:8888/api/v1/users/1/files/86"
-    ],
-    "name": "Vũ Việt Cường",
-    "email": "vuvietcuong@gmail.com",
-    "phone": "0336294777",
-    "password": "123456"
+    "name": "VuVietCuong5@gmail.com",
+    "email": "vuvietcuong5@gmail.com",
+    "phone": "",
+    "avatar": "https://media.techmaster.vn/api/static/crop/bv9jp4k51co7nj2mhht0",
+    "password": "123456",
+    "id": 9
   },
   "tags": [
     {
@@ -177,21 +177,21 @@
       "name": "Chanh không hạt",
       "price": 45000,
       "image": "https://y5kbp0ifnvobj.vcdn.cloud/uploads/filecloud/2022/July/12/12745-906241657597162-1657597162--400x400.jpg",
-      "count": 1
+      "count": 3
     },
     {
       "id": 2,
       "name": "Lá lách romani",
       "price": 32000,
       "image": "https://y5kbp0ifnvobj.vcdn.cloud/uploads/filecloud/2022/July/29/13343-116861659063762-1659063762--400x400.jpg",
-      "count": 1
+      "count": 4
     },
     {
       "id": 3,
       "name": "Mồng tơi hữu cơ",
       "price": 25000,
       "image": "https://y5kbp0ifnvobj.vcdn.cloud/uploads/filecloud/2022/July/29/13515-260701659086944-1659086944--400x400.jpeg",
-      "count": 1
+      "count": 2
     }
   ],
   "products": [
@@ -704,6 +704,23 @@
         "https://y5kbp0ifnvobj.vcdn.cloud/uploads/filecloud/2021/June/18/8838-733081624007823-1624007823--400x400.jpg"
       ],
       "category": "củ"
+    },
+    {
+      "images": [
+        "//images.weserv.nl?url=http://103.237.147.34:8888/api/v1/users/1/files/135",
+        "//images.weserv.nl?url=http://103.237.147.34:8888/api/v1/users/1/files/135",
+        "//images.weserv.nl?url=http://103.237.147.34:8888/api/v1/users/1/files/135",
+        "//images.weserv.nl?url=http://103.237.147.34:8888/api/v1/users/1/files/135",
+        "//images.weserv.nl?url=http://103.237.147.34:8888/api/v1/users/1/files/135"
+      ],
+      "name": "ewdawd",
+      "price": "sfdsfsd",
+      "category": "dasda",
+      "tag": "dasd",
+      "rating": "dasda",
+      "description": "description",
+      "voted": 10,
+      "id": 31
     }
   ]
 }
