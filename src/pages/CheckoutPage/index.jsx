@@ -14,8 +14,16 @@ import { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import { useField, useFormik } from "formik";
 import * as Yup from "yup";
+import { getApiProvinces } from "../../redux/apiSlice";
 
 const CheckoutPage = () => {
+  
+  const [valueCity,setValueCity] = useState()
+
+  const hanleChangeCity = (e) =>{
+    setValueCity(e.target.value)
+  }
+  console.log(valueCity)
   const formik = useFormik({
     initialValues: {
       fullname: "",
@@ -45,12 +53,19 @@ const CheckoutPage = () => {
         .min(6, "Khong duoc it hon 6 ki tu"),
     }),
     onSubmit: (values) => {
-      console.log(values);
     },
   });
-  console.log(formik.errors.fullname);
+
   const productCart = useSelector((state) => state.productCart.productCart);
-  const dispatch = useDispatch();
+
+  const dispatch = useDispatch()
+  const provinces = useSelector((state) => state.api.provinces);
+
+  useEffect(() =>{
+    dispatch(getApiProvinces())
+  },[])
+
+  console.log(provinces)
 
   const [priceDiscount, setPriceDiscount] = useState(0);
   const [inputDiscount, setInputDiscount] = useState("");
@@ -89,8 +104,6 @@ const CheckoutPage = () => {
   const totalMoneyProductCart = productCart.reduce((total, p) => {
     return total + p.price * p.count;
   }, 0);
-
-  console.log(formik.touched.fullname);
 
   return (
     <>
@@ -168,8 +181,11 @@ const CheckoutPage = () => {
                     </div>
                     <div className="input-address-detail">
                       <div className="info-ship-input">
-                        <select name="province" id="citis">
+                        <select onChange={hanleChangeCity} name="province" id="citis">
                           <option value="">Tỉnh / thành</option>
+                          {provinces.map((p) => (
+                            <option value={p.name}>{p.name}</option>
+                          ))}
                         </select>
                         <small>Error message</small>
                       </div>

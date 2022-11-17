@@ -48,6 +48,7 @@ const Register = () => {
       avatar:
         "https://media.techmaster.vn/api/static/crop/bv9jp4k51co7nj2mhht0",
       password: userPassWord,
+      roles:["USER"]
     };
     dispatch(addUsers(newUser));
     navigate("/login")

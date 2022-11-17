@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const axiosClient = axios.create({
-    baseURL: 'http://localhost:3001/',
+    baseURL: process.env.REACT_APP_API || "https://greeny-test.herokuapp.com/",
     headers: { 'Content-Type': 'application/json; charset=UTF-8' }
 });
 

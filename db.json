@@ -94,16 +94,15 @@
     }
   ],
   "auth": {
-    "id": 2,
+    "id": 4,
     "avatar": [
-      "http://103.237.147.34:8888/api/v1/users/1/files/86"
+      "http://103.237.147.34:8888/api/v1/users/1/files/88"
     ],
-    "name": "Vũ Việt Cường",
-    "email": "vuvietcuong@gmail.com",
-    "phone": "0336294777",
+    "name": "Lại Cao Đài",
+    "email": "laicaodai@gmail.com",
+    "phone": "123456",
     "password": "123456",
     "roles": [
-      "ADMIN",
       "USER"
     ]
   },
@@ -186,7 +185,7 @@
       "name": "Chanh không hạt",
       "price": 45000,
       "image": "https://y5kbp0ifnvobj.vcdn.cloud/uploads/filecloud/2022/July/12/12745-906241657597162-1657597162--400x400.jpg",
-      "count": 2
+      "count": 3
     },
     {
       "id": 2,
@@ -753,23 +752,6 @@
         "https://y5kbp0ifnvobj.vcdn.cloud/uploads/filecloud/2021/June/18/8838-733081624007823-1624007823--400x400.jpg"
       ],
       "category": "củ"
-    },
-    {
-      "images": [
-        "http://103.237.147.34:8888/api/v1/users/1/files/136",
-        "http://103.237.147.34:8888/api/v1/users/1/files/136",
-        "http://103.237.147.34:8888/api/v1/users/1/files/136",
-        "http://103.237.147.34:8888/api/v1/users/1/files/136",
-        "http://103.237.147.34:8888/api/v1/users/1/files/136"
-      ],
-      "name": "tinh",
-      "price": "abc",
-      "category": "tinh",
-      "tag": "tinh",
-      "rating": "12334",
-      "description": "description",
-      "voted": 10,
-      "id": 32
     }
   ]
 }

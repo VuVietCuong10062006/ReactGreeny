@@ -3,10 +3,17 @@ import DashboardIcon from "@mui/icons-material/Dashboard";
 import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
 import StoreIcon from "@mui/icons-material/Store";
 import ExitToAppIcon from "@mui/icons-material/ExitToApp";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { authLogout } from "../../../../redux/authSlice";
 
 const Sidebar = () => {
-  const handleLogout = () => {};
+  const navigate = useNavigate();
+  const dispatch = useDispatch()
+  const handleLogout = () => {
+    dispatch(authLogout())
+    navigate("/");
+  };
 
   return (
     <div className="sidebar">

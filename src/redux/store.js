@@ -4,6 +4,7 @@ import authReduce  from "./authSlice"
 import usersReduce  from "./userSlice"
 import productsReduce from "./productsSlice"
 import productHeartReduce from "./productHeartSlice"
+import apiReduce from "./apiSlice"
 
 const store = configureStore({
     reducer: {
@@ -12,6 +13,7 @@ const store = configureStore({
         auth : authReduce,
         users : usersReduce,
         products : productsReduce,
+        api : apiReduce
     }
 }) 
 

@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Contact.css";
 import Iframe from "react-iframe";
 
 const Contact = () => {
+
   return (
     <section className="contact">
       <div className="container">
@@ -34,7 +35,7 @@ const Contact = () => {
         <div className="row">
           <div className="col-lg-6 col-md-6">
             <div className="contact-map">
-            <Iframe
+              <Iframe
                 src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7449.724758644388!2d105.79431749999999!3d20.998153!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ad5e6a49f693%3A0x13aeab8c73d00e0c!2sTechmaster!5e0!3m2!1svi!2s!4v1660186919368!5m2!1svi!2s"
                 width="500"
                 height="450"

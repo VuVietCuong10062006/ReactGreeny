@@ -31,6 +31,7 @@ const NewUsers = () => {
       email: email,
       phone: phone,
       password: password,
+      roles:["USER"]
       // address: address,
     };
     dispatch(addUsers(newU));

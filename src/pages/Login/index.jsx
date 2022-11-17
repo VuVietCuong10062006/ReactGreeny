@@ -19,6 +19,7 @@ const Login = () => {
     dispatch(getAuth());
   }, []);
 
+
   useEffect(() => {
     dispatch(getUsers());
   }, []);
