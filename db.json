@@ -3,7 +3,7 @@
     {
       "id": 2,
       "avatar": [
-        "http://103.237.147.34:8888/api/v1/users/1/files/86"
+        "//images.weserv.nl?url=http://103.237.147.34:8888/api/v1/users/1/files/86"
       ],
       "name": "Vũ Việt Cường",
       "email": "vuvietcuong@gmail.com",
@@ -17,7 +17,7 @@
     {
       "id": 3,
       "avatar": [
-        "http://103.237.147.34:8888/api/v1/users/1/files/87"
+        "//images.weserv.nl?url=http://103.237.147.34:8888/api/v1/users/1/files/87"
       ],
       "name": "Bùi Trung Hiếu",
       "email": "trunhi@gmail.com",
@@ -30,7 +30,7 @@
     {
       "id": 4,
       "avatar": [
-        "http://103.237.147.34:8888/api/v1/users/1/files/88"
+        "//images.weserv.nl?url=http://103.237.147.34:8888/api/v1/users/1/files/88"
       ],
       "name": "Lại Cao Đài",
       "email": "laicaodai@gmail.com",
@@ -42,7 +42,7 @@
     },
     {
       "avatar": [
-        "http://103.237.147.34:8888/api/v1/users/1/files/89"
+        "//images.weserv.nl?url=http://103.237.147.34:8888/api/v1/users/1/files/89"
       ],
       "name": "Phan Duy Hậu",
       "email": "phanduyhau@gmail.com",
@@ -68,35 +68,22 @@
     },
     {
       "avatar": [
-        "//images.weserv.nl?url=http://103.237.147.34:8888/api/v1/users/1/files/134"
+        "//images.weserv.nl?url=http://103.237.147.34:8888/api/v1/users/1/files/190"
       ],
-      "name": "fsdf",
-      "email": "fsfs",
-      "phone": "fsdfs",
-      "password": "fsdfs",
-      "id": 7,
+      "name": "Vũ Việt Cường",
+      "email": "vuvietcuong5@gmail.com",
+      "phone": "0336294777",
+      "password": "123456",
       "roles": [
         "USER"
-      ]
-    },
-    {
-      "avatar": [
-        "//images.weserv.nl?url=http://103.237.147.34:8888/api/v1/users/1/files/138"
       ],
-      "name": "fsdfds",
-      "email": "dsddfsf",
-      "phone": "fsdfsdfd",
-      "password": "fsdfdsf",
-      "id": 9,
-      "roles": [
-        "USER"
-      ]
+      "id": 7
     }
   ],
   "auth": {
     "id": 2,
     "avatar": [
-      "http://103.237.147.34:8888/api/v1/users/1/files/86"
+      "//images.weserv.nl?url=http://103.237.147.34:8888/api/v1/users/1/files/86"
     ],
     "name": "Vũ Việt Cường",
     "email": "vuvietcuong@gmail.com",

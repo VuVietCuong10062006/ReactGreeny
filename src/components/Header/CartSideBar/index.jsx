@@ -2,9 +2,9 @@ import React, { useEffect, useState } from "react";
 import "./CartSideBar.css";
 import { useDispatch, useSelector } from "react-redux";
 import {
-  deleteProduct,
-  getProduct,
-  updateProduct,
+  addCountProductCart,
+  deleteProductCart,
+  subtractCountProductCart,
 } from "../../../redux/productCartSlice";
 
 import { Link } from "react-router-dom";
@@ -19,26 +19,18 @@ const CartSideBar = ({
   const productCart = useSelector((state) => state.productCart.productCart);
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(getProduct());
-  }, []);
-
   const [inputValue, setInputvalue] = useState(1);
 
-  const handleAddCountProductCart = (product) => {
-    let productUpdate = { ...product, count: product.count + 1 };
-    dispatch(updateProduct(productUpdate));
+  const handleAddCountProductCart = (id) => {
+    dispatch(addCountProductCart(id));
   };
 
-  const handleSubtractCountProductCart = (product) => {
-    if (product.count > 1) {
-      let productUpdate = { ...product, count: product.count - 1 };
-      dispatch(updateProduct(productUpdate));
-    }
+  const handleSubtractCountProductCart = (id) => {
+      dispatch(subtractCountProductCart(id));
   };
 
   const handleDeleteProductCart = (id) => {
-    dispatch(deleteProduct(id));
+    dispatch(deleteProductCart(id));
   };
 
   const totalMoneyProductCart = productCart.reduce((total, p) => {
@@ -80,7 +72,7 @@ const CartSideBar = ({
               <div className="cart-sidebar-action-group">
                 <div className="product-action">
                   <button
-                    onClick={() => handleSubtractCountProductCart(product)}
+                    onClick={() => handleSubtractCountProductCart(product.id)}
                     className="action-minus"
                   >
                     <i className="fa-solid fa-minus"></i>
@@ -94,7 +86,7 @@ const CartSideBar = ({
                     onChange={(e) => setInputvalue(e.target.value)}
                   />
                   <button
-                    onClick={() => handleAddCountProductCart(product)}
+                    onClick={() => handleAddCountProductCart(product.id)}
                     className="action-plus"
                   >
                     <i className="fa-solid fa-plus"></i>

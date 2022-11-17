@@ -14,16 +14,21 @@ import { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import { useField, useFormik } from "formik";
 import * as Yup from "yup";
-import { getApiProvinces } from "../../redux/apiSlice";
+import { getApiHuyen, getApiProvinces, getApiQuan, getHuyenByQuan, getQuanByProvince } from "../../redux/apiSlice";
 
 const CheckoutPage = () => {
   
   const [valueCity,setValueCity] = useState()
+  const [valueQuan,setValueQuan] = useState()
 
   const hanleChangeCity = (e) =>{
-    setValueCity(e.target.value)
+    dispatch(getQuanByProvince(e.target.value))
   }
-  console.log(valueCity)
+
+  const hanleChangeQuan = (e) =>{
+    dispatch(getHuyenByQuan(e.target.value))
+  }
+
   const formik = useFormik({
     initialValues: {
       fullname: "",
@@ -60,12 +65,20 @@ const CheckoutPage = () => {
 
   const dispatch = useDispatch()
   const provinces = useSelector((state) => state.api.provinces);
+  const quan = useSelector((state) => state.api.quan)
+  const huyen = useSelector((state) => state.api.huyen)
 
   useEffect(() =>{
     dispatch(getApiProvinces())
   },[])
 
-  console.log(provinces)
+  useEffect(() =>{
+    dispatch(getApiQuan())
+  },[])
+
+  useEffect(() =>{
+    dispatch(getApiHuyen())
+  },[])
 
   const [priceDiscount, setPriceDiscount] = useState(0);
   const [inputDiscount, setInputDiscount] = useState("");
@@ -97,9 +110,7 @@ const CheckoutPage = () => {
     }
   };
 
-  useEffect(() => {
-    dispatch(getProduct());
-  }, []);
+  
 
   const totalMoneyProductCart = productCart.reduce((total, p) => {
     return total + p.price * p.count;
@@ -183,21 +194,27 @@ const CheckoutPage = () => {
                       <div className="info-ship-input">
                         <select onChange={hanleChangeCity} name="province" id="citis">
                           <option value="">Tỉnh / thành</option>
-                          {provinces.map((p) => (
-                            <option value={p.name}>{p.name}</option>
+                          {provinces.map((p,i) => (
+                            <option key={i} value={p.code}>{p.name}</option>
                           ))}
                         </select>
                         <small>Error message</small>
                       </div>
                       <div className="info-ship-input">
-                        <select name="province" id="district">
+                        <select onChange={hanleChangeQuan} name="province" id="district">
                           <option value="">Quận / huyện</option>
+                          {quan.map((p,i) => (
+                            <option key={i} value={p.code}>{p.name}</option>
+                          ))}
                         </select>
                         <small>Error message</small>
                       </div>
                       <div className="info-ship-input">
                         <select name="province" id="ward">
                           <option value="">Xã / phường</option>
+                          {huyen.map((p,i) => (
+                            <option key={i} value={p.code}>{p.name}</option>
+                          ))}
                         </select>
                         <small>Error message</small>
                       </div>

@@ -4,7 +4,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useDispatch, useSelector } from "react-redux";
-import { addProduct, getProduct } from "../../redux/productCartSlice";
+import { addProduct, addProductCart, getProduct } from "../../redux/productCartSlice";
 import productApi from "../../api/productApi";
 import { Link, useParams } from "react-router-dom";
 import formatMoney, { isEmpty } from "../../utils/utils";
@@ -22,9 +22,9 @@ const ProductDetailPage = () => {
     });
   }, []);
 
-  useEffect(() => {
-    dispatch(getProduct());
-  }, []);
+  // useEffect(() => {
+  //   dispatch(getProduct());
+  // }, []);
   const handleAddProductCart = () => {
     // Kiểm tra sản phẩm đã có trong giở hàng hay chưa?
     const isExist = productCart.some((product) => product.id === +productId);
@@ -42,7 +42,7 @@ const ProductDetailPage = () => {
       image: productItem.images[0],
       count: 1,
     };
-    dispatch(addProduct(newProductCarItem));
+    dispatch(addProductCart(newProductCarItem));
     toast.success("thêm vào giỏ hàng thành công", {
       position: toast.POSITION.TOP_CENTER,
     });

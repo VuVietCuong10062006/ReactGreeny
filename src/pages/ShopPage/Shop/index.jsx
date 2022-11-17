@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./Shop.css";
 import { useDispatch, useSelector } from "react-redux";
-import { getProduct, addProduct } from "../../../redux/productCartSlice";
+import { getProduct, addProduct, addProductCart } from "../../../redux/productCartSlice";
 import productApi from "../../../api/productApi";
 import formatMoney from "../../../utils/utils";
 import { toast, ToastContainer } from "react-toastify";
@@ -32,9 +32,9 @@ const Shop = () => {
   const [currentPage, setCurrentPage] = useState(1);
 
 
-  useEffect(() => {
-    dispatch(getProduct());
-  }, []);
+  // useEffect(() => {
+  //   dispatch(getProduct());
+  // }, []);
 
   useEffect(() => {
     dispatch(getProductHeart());
@@ -164,7 +164,7 @@ const Shop = () => {
       image: productItem.images[0],
       count: 1,
     };
-    dispatch(addProduct(newProductCarItem));
+    dispatch(addProductCart(newProductCarItem));
 
     toast.success("thêm vào giỏ hàng thành công", {
       position: toast.POSITION.TOP_CENTER,

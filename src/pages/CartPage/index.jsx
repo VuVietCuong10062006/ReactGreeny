@@ -2,9 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import ShopBanner from "../ShopPage/ShopBanner";
 import "./CartPage.css";
 import { useDispatch, useSelector } from "react-redux";
-import { deleteProduct, getProduct, updateProduct } from "../../redux/productCartSlice";
-// import Context from "../../context/Context";
-// import { addCount, deleteCount, subtractCount } from "../../store/actions";
+import { addCountProductCart, deleteProduct, deleteProductCart, getProduct, subtractCountProductCart, updateProduct } from "../../redux/productCartSlice";
 import formatMoney from "../../utils/utils";
 import { Link } from "react-router-dom";
 
@@ -12,24 +10,22 @@ const CartPage = () => {
   const dispatch = useDispatch();
   const productCart = useSelector((state) => state.productCart.productCart);
 
-  useEffect(() => {
-    dispatch(getProduct());
-  }, []);
+  // useEffect(() => {
+  //   dispatch(getProduct());
+  // }, []);
 
-  const handleAddCountProductCart = (product) => {
-    let productUpdate = { ...product, count: product.count + 1 };
-    dispatch(updateProduct(productUpdate));
+  const handleAddCountProductCart = (id) => {
+    dispatch(addCountProductCart(id));
   };
 
-  const handleSubtractCountProductCart = (product) => {
-    if (product.count > 1) {
-      let productUpdate = { ...product, count: product.count - 1 };
-      dispatch(updateProduct(productUpdate));
-    }
+  const handleSubtractCountProductCart = (id) => {
+    
+      dispatch(subtractCountProductCart(id));
+    
   };
 
   const handleDeleteProductCart = (id) => {
-    dispatch(deleteProduct(id))
+    dispatch(deleteProductCart(id))
   }
 
   // const { productCartItem, dispatchProducCart } = useContext(Context);
@@ -74,7 +70,7 @@ const CartPage = () => {
                           <div className="cart-action">
                             <button
                               onClick={() =>
-                                handleSubtractCountProductCart(product)
+                                handleSubtractCountProductCart(product.id)
                               }
                               className="action-minus"
                             >
@@ -89,7 +85,7 @@ const CartPage = () => {
                               onChange={(e) => setInputvalue(e.target.value)}
                             />
                             <button
-                              onClick={() => handleAddCountProductCart(product)}
+                              onClick={() => handleAddCountProductCart(product.id)}
                               className="action-plus"
                             >
                               <i className="fa-solid fa-plus"></i>

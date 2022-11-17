@@ -25,13 +25,13 @@ const Header = () => {
   const auth = useSelector((state) => state.auth.auth);
   const dispatch = useDispatch();
   
-  useEffect(() => {
-    dispatch(getProduct());
-  }, []);
+  // useEffect(() => {
+  //   dispatch(getProduct());
+  // }, []);
 
-  useEffect(() => {
-    dispatch(getAuth());
-  }, []);
+  // useEffect(() => {
+  //   dispatch(getAuth());
+  // }, []);
 
   useEffect(() => {
     dispatch(getProductHeart());

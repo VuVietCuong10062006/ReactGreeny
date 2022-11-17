@@ -16,11 +16,6 @@ const Login = () => {
   const users = useSelector((state) => state.users.users);
 
   useEffect(() => {
-    dispatch(getAuth());
-  }, []);
-
-
-  useEffect(() => {
     dispatch(getUsers());
   }, []);
 

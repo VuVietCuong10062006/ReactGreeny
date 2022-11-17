@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./SellProduct.css";
 
 import { useDispatch, useSelector } from "react-redux";
-import { getProduct, addProduct } from "../../../redux/productCartSlice";
+import { addProductCart } from "../../../redux/productCartSlice";
 import { Link } from "react-router-dom";
 import formatMoney from "../../../utils/utils";
 import productApi from "../../../api/productApi";
@@ -15,10 +15,6 @@ const SellProduct = () => {
   const [products, setProducts] = useState([]);
   const productCart = useSelector((state) => state.productCart.productCart);
   const productHeart = useSelector((state) => state.productHeart.productHeart);
-
-  useEffect(() => {
-    dispatch(getProduct());
-  }, []); 
 
   useEffect(() => {
     dispatch(getProductHeart());
@@ -78,7 +74,7 @@ const SellProduct = () => {
       image: productItem.images[0],
       count: 1,
     };
-    dispatch(addProduct(newProductCarItem));
+    dispatch(addProductCart(newProductCarItem));
 
     toast.success("thêm vào giỏ hàng thành công", {
       position: toast.POSITION.TOP_CENTER,

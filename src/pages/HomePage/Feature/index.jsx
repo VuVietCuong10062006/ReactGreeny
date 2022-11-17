@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import "./Feature.css";
 import { useDispatch, useSelector } from "react-redux";
-import { getProduct, addProduct } from "../../../redux/productCartSlice";
+import { getProduct, addCountProductCart, addProductCart } from "../../../redux/productCartSlice";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import productApi from "../../../api/productApi";
@@ -26,9 +26,9 @@ const Feature = () => {
     dispatch(getProductHeart());
   }, []);
 
-  useEffect(() => {
-    dispatch(getProduct());
-  }, []);
+  // useEffect(() => {
+  //   dispatch(getProduct());
+  // }, []);
 
   useEffect(() => {
     productApi.getProductFeature().then((data) => {
@@ -36,7 +36,7 @@ const Feature = () => {
     });
   }, []);
 
-  
+  console.log(productCart)
   const handleAddProductHeart = (id) => {
     const productItem = products.find((p) => p.id === id);
     // Kiểm tra sản phẩm đã có trong giở hàng hay chưa?
@@ -78,7 +78,7 @@ const Feature = () => {
       image: productItem.images[0],
       count: 1,
     };
-    dispatch(addProduct(newProductCarItem));
+    dispatch(addProductCart(newProductCarItem));
     toast.success("thêm vào giỏ hàng thành công", {
       position: toast.POSITION.TOP_CENTER,
     });
