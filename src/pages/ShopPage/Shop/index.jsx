@@ -33,12 +33,8 @@ const Shop = () => {
 
 
   // useEffect(() => {
-  //   dispatch(getProduct());
+  //   dispatch(getProductHeart());
   // }, []);
-
-  useEffect(() => {
-    dispatch(getProductHeart());
-  }, []);
 
   useEffect(() => {
     productApi.getProducts().then((data) => {
@@ -151,7 +147,7 @@ const Shop = () => {
     // Kiểm tra sản phẩm đã có trong giở hàng hay chưa?
     const isExist = productCart.some((p) => p.id === id);
     if (isExist) {
-      toast.error("Sản phẩm đã có trong giỏ hàng", {
+      toast.warning("Sản phẩm đã có trong giỏ hàng", {
         position: toast.POSITION.TOP_CENTER,
       });
       return;
@@ -177,7 +173,6 @@ const Shop = () => {
 
   return (
     <>
-      <ToastContainer />
       <section className="shop">
         <div className="container">
           <div className="row flex-wrap-reverse">
@@ -363,12 +358,12 @@ const Shop = () => {
                           <img src={product.images[0]} alt="" />
                         </Link>
                         <div className="product-widget">
-                          <a href="" className="product-video">
+                          <Link href="/shop-page" className="product-video">
                             <i className="fa-solid fa-play"></i>
-                          </a>
-                          <a href="" className="product-view">
+                          </Link>
+                          <Link to={`/${product.id}`} className="product-view">
                             <i className="fa-solid fa-eye"></i>
-                          </a>
+                          </Link>
                         </div>
                       </div>
                       <div className="product-content">

@@ -3,82 +3,143 @@ import ShopBanner from "../ShopPage/ShopBanner";
 import "./CheckoutPage.css";
 
 import { useDispatch, useSelector } from "react-redux";
-// import productApi from "../../api/productApi";
-import { getProduct } from "../../redux/productCartSlice";
 import payment6 from "../../assets/image/payment-6.png";
 import payment7 from "../../assets/image/payment-7.png";
 import payment9 from "../../assets/image/payment-9.png";
 import formatMoney from "../../utils/utils";
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import { ToastContainer, toast } from "react-toastify";
-import { useField, useFormik } from "formik";
-import * as Yup from "yup";
-import { getApiHuyen, getApiProvinces, getApiQuan, getHuyenByQuan, getQuanByProvince } from "../../redux/apiSlice";
+import { toast } from "react-toastify";
+// import { useFormik } from "formik";
+// import * as Yup from "yup";
+import {
+  getApiHuyen,
+  getApiProvinces,
+  getApiQuan,
+  getHuyenByQuan,
+  getQuanByProvince,
+} from "../../redux/apiSlice";
 
 const CheckoutPage = () => {
-  
-  const [valueCity,setValueCity] = useState()
-  const [valueQuan,setValueQuan] = useState()
+  const [name, setName] = useState();
+  const [email, setEmail] = useState();
+  const [phone, setPhone] = useState();
+  const [address, setAddress] = useState();
+  const [note, setNote] = useState();
+  const [messageName, setMessageName] = useState("");
+  const [messageEmail, setMessageEmail] = useState("");
+  const [messagePhone, setMessagePhone] = useState("");
+  const [messageAddress, setMessageAddress] = useState("");
+  const [messageNote, setMessageNote] = useState("");
 
-  const hanleChangeCity = (e) =>{
-    dispatch(getQuanByProvince(e.target.value))
-  }
+  const hanleChangeCity = (e) => {
+    dispatch(getQuanByProvince(e.target.value));
+  };
 
-  const hanleChangeQuan = (e) =>{
-    dispatch(getHuyenByQuan(e.target.value))
-  }
+  const hanleChangeQuan = (e) => {
+    dispatch(getHuyenByQuan(e.target.value));
+  };
 
-  const formik = useFormik({
-    initialValues: {
-      fullname: "",
-      email: "",
-      phone: "",
-      address: "",
-      note: "",
-    },
-    validationSchema: Yup.object({
-      fullname: Yup.string()
-        .required("Chua nhap fullname")
-        .min(6, "Khong duoc it hon 6 ki tu"),
-      email: Yup.string()
-        .required("Chua nhap email")
-        .matches(
-          /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/,
-          "email chua dung dinh dang"
-        ),
-      phone: Yup.string()
-        .required("Chua nhap phone")
-        .min(6, "Khong duoc it hon 6 ki tu"),
-      address: Yup.string()
-        .required("Chua nhap address")
-        .min(6, "Khong duoc it hon 6 ki tu"),
-      note: Yup.string()
-        .required("Chua nhap note")
-        .min(6, "Khong duoc it hon 6 ki tu"),
-    }),
-    onSubmit: (values) => {
-    },
-  });
+  const handleCheckout = () => {
+    setMessageName("");
+    setMessageEmail("");
+    setMessagePhone("");
+    setMessageAddress("");
+    setMessageNote("");
+
+    let isValid = checkValidate();
+    if (!isValid) return;
+    toast.success("Mua hàng thành công", {
+      position: toast.POSITION.TOP_CENTER,
+    });
+  };
+
+  const checkValidate = () => {
+    let isCheck = true;
+    if (!name) {
+      setMessageName("Tên không được để chống");
+      isCheck = false;
+    }
+
+    if (!email) {
+      setMessageEmail("Email không được để chống");
+      isCheck = false;
+    } else if (!validateEmail(email)) {
+      setMessageEmail("Email không đúng định dạng");
+      isCheck = false;
+    }
+
+    if (!phone) {
+      setMessagePhone("Số điện thoại không được để chống");
+      isCheck = false;
+    }
+
+    if (!address) {
+      setMessageAddress("Địa chỉ không được để chống");
+      isCheck = false;
+    }
+
+    return isCheck;
+  };
+
+  const validateEmail = (email) => {
+    return String(email)
+      .toLowerCase()
+      .match(
+        /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+      );
+  };
+
+  // const formik = useFormik({
+  //   initialValues: {
+  //     fullname: "",
+  //     email: "",
+  //     phone: "",
+  //     address: "",
+  //     note: "",
+  //   },
+  //   validationSchema: Yup.object({
+  //     fullname: Yup.string()
+  //       .required("Chua nhap fullname")
+  //       .min(6, "Khong duoc it hon 6 ki tu"),
+  //     email: Yup.string()
+  //       .required("Chua nhap email")
+  //       .matches(
+  //         /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/,
+  //         "email chua dung dinh dang"
+  //       ),
+  //     phone: Yup.string()
+  //       .required("Chua nhap phone")
+  //       .min(6, "Khong duoc it hon 6 ki tu"),
+  //     address: Yup.string()
+  //       .required("Chua nhap address")
+  //       .min(6, "Khong duoc it hon 6 ki tu"),
+  //     note: Yup.string()
+  //       .required("Chua nhap note")
+  //       .min(6, "Khong duoc it hon 6 ki tu"),
+  //   }),
+  //   onSubmit: (values) => {
+  //   },
+  // });
 
   const productCart = useSelector((state) => state.productCart.productCart);
 
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   const provinces = useSelector((state) => state.api.provinces);
-  const quan = useSelector((state) => state.api.quan)
-  const huyen = useSelector((state) => state.api.huyen)
+  const quan = useSelector((state) => state.api.quan);
+  const huyen = useSelector((state) => state.api.huyen);
 
-  useEffect(() =>{
-    dispatch(getApiProvinces())
-  },[])
+  useEffect(() => {
+    dispatch(getApiProvinces());
+  }, []);
 
-  useEffect(() =>{
-    dispatch(getApiQuan())
-  },[])
+  useEffect(() => {
+    dispatch(getApiQuan());
+  }, []);
 
-  useEffect(() =>{
-    dispatch(getApiHuyen())
-  },[])
+  useEffect(() => {
+    dispatch(getApiHuyen());
+  }, []);
 
   const [priceDiscount, setPriceDiscount] = useState(0);
   const [inputDiscount, setInputDiscount] = useState("");
@@ -110,21 +171,18 @@ const CheckoutPage = () => {
     }
   };
 
-  
-
   const totalMoneyProductCart = productCart.reduce((total, p) => {
     return total + p.price * p.count;
   }, 0);
 
   return (
     <>
-      <ToastContainer />
       <ShopBanner />
       <section className="checkout">
         <div className="container">
           <div className="row flex-wrap-reverse">
             <div className="col-lg-7 col-md-7">
-              <form onSubmit={formik.handleSubmit}>
+              <form onSubmit={(e) => e.preventDefault()}>
                 <div className="checkout-info">
                   <div className="info-ship">
                     <h2>Thông tin vận chuyển</h2>
@@ -139,12 +197,15 @@ const CheckoutPage = () => {
                         id="fullname"
                         name="fullname"
                         placeholder="Tên đầy đủ"
-                        value={formik.values.fullname}
-                        onChange={formik.handleChange}
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                        // value={formik.values.fullname}
+                        // onChange={formik.handleChange}
                       />
-                      {formik.errors.fullname && !formik.values.fullname && (
+                      {/* {formik.errors.fullname && !formik.values.fullname && (
                         <small>{formik.errors.fullname}</small>
-                      )}
+                      )} */}
+                      <small>{messageName}</small>
                     </div>
                     <div className="input-email-phone">
                       <div className="info-ship-input">
@@ -154,12 +215,15 @@ const CheckoutPage = () => {
                           id="email"
                           name="email"
                           placeholder="Email"
-                          value={formik.values.email}
-                          onChange={formik.handleChange}
+                          value={email}
+                          onChange={(e) => setEmail(e.target.value)}
+                          // value={formik.values.email}
+                          // onChange={formik.handleChange}
                         />
-                        {formik.errors.email && !formik.values.email && (
+                        {/* {formik.errors.email && !formik.values.email && (
                           <small>{formik.errors.email}</small>
-                        )}
+                        )} */}
+                        <small>{messageEmail}</small>
                       </div>
                       <div className="info-ship-input">
                         {/* <!-- <label htmlFor="phone"></label> --> */}
@@ -168,12 +232,15 @@ const CheckoutPage = () => {
                           id="phone"
                           name="phone"
                           placeholder="Số điện thoại"
-                          value={formik.values.phone}
-                          onChange={formik.handleChange}
+                          value={phone}
+                          onChange={(e) => setPhone(e.target.value)}
+                          // value={formik.values.phone}
+                          // onChange={formik.handleChange}
                         />
-                        {formik.errors.phone && !formik.values.phone && (
+                        {/* {formik.errors.phone && !formik.values.phone && (
                           <small>{formik.errors.phone}</small>
-                        )}
+                        )} */}
+                        <small>{messagePhone}</small>
                       </div>
                     </div>
                     <div className="info-ship-input">
@@ -183,40 +250,57 @@ const CheckoutPage = () => {
                         id="address"
                         name="address"
                         placeholder="Địa chỉ"
-                        value={formik.values.address}
-                        onChange={formik.handleChange}
+                        value={address}
+                        onChange={(e) => setAddress(e.target.value)}
+                        // value={formik.values.address}
+                        // onChange={formik.handleChange}
                       />
-                      {formik.errors.address && !formik.values.address && (
+                      {/* {formik.errors.address && !formik.values.address && (
                         <small>{formik.errors.address}</small>
-                      )}
+                      )} */}
+                      <small>{messageAddress}</small>
                     </div>
                     <div className="input-address-detail">
                       <div className="info-ship-input">
-                        <select onChange={hanleChangeCity} name="province" id="citis">
+                        <select
+                          onChange={hanleChangeCity}
+                          name="province"
+                          id="citis"
+                        >
                           <option value="">Tỉnh / thành</option>
-                          {provinces.map((p,i) => (
-                            <option key={i} value={p.code}>{p.name}</option>
+                          {provinces.map((p, i) => (
+                            <option key={i} value={p.code}>
+                              {p.name}
+                            </option>
                           ))}
                         </select>
-                        <small>Error message</small>
+                        <small></small>
                       </div>
                       <div className="info-ship-input">
-                        <select onChange={hanleChangeQuan} name="province" id="district">
+                        <select
+                          onChange={hanleChangeQuan}
+                          name="province"
+                          id="district"
+                        >
                           <option value="">Quận / huyện</option>
-                          {quan.map((p,i) => (
-                            <option key={i} value={p.code}>{p.name}</option>
+                          {quan.map((p, i) => (
+                            <option key={i} value={p.code}>
+                              {p.name}
+                            </option>
                           ))}
                         </select>
-                        <small>Error message</small>
+                        <small></small>
                       </div>
                       <div className="info-ship-input">
                         <select name="province" id="ward">
                           <option value="">Xã / phường</option>
-                          {huyen.map((p,i) => (
-                            <option key={i} value={p.code}>{p.name}</option>
+                          {huyen.map((p, i) => (
+                            <option key={i} value={p.code}>
+                              {p.name}
+                            </option>
                           ))}
                         </select>
-                        <small>Error message</small>
+                        <small></small>
                       </div>
                     </div>
                     <div className="info-ship-input">
@@ -226,12 +310,15 @@ const CheckoutPage = () => {
                         id="note"
                         name="note"
                         placeholder="Ghi chú"
-                        value={formik.values.note}
-                        onChange={formik.handleChange}
+                        value={note}
+                        onChange={(e) => setNote(e.target.value)}
+                        // value={formik.values.note}
+                        // onChange={formik.handleChange}
                       />
-                      {formik.errors.note && !formik.values.note && (
+                      {/* {formik.errors.note && !formik.values.note && (
                         <small>{formik.errors.note}</small>
-                      )}
+                      )} */}
+                      <small>{messageNote}</small>
                     </div>
                   </div>
                   <div className="payments">
@@ -253,7 +340,7 @@ const CheckoutPage = () => {
                     <div className="radio-wrapper">
                       <input
                         type="radio"
-                        // checked="checked"
+                        checked="checked"
                         name="payments"
                         id="payments"
                       />
@@ -265,7 +352,7 @@ const CheckoutPage = () => {
                   </div>
                   <div className="confirm">
                     <Link to={`/shop-page`}>Tiếp tục mua hàng</Link>
-                    <button>
+                    <button onClick={handleCheckout}>
                       <span>Thanh Toán</span>
                     </button>
                   </div>

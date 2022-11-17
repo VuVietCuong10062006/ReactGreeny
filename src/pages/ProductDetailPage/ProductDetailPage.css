@@ -3,6 +3,14 @@
     height: 45px;
 }
 
+.details{
+    margin-top: 100px;
+}
+
+.details-descriptions{
+    margin-top: 100px;
+}
+
 .slick-thumb {
     bottom: -45px;
 }

@@ -5,25 +5,22 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import {
   deleteProductHeart,
-  getProductHeart,
 } from "../../../redux/productHeartSlice";
 import formatMoney, { isEmpty } from "../../../utils/utils";
+import { Link } from "react-router-dom";
 
 const HeartSideBar = ({ showHeartSideBar, onCloseHeartSideBar }) => {
   const dispatch = useDispatch();
   const productHeart = useSelector((state) => state.productHeart.productHeart);
 
-  useEffect(() => {
-    dispatch(getProductHeart());
-  }, []);
+  // useEffect(() => {
+  //   dispatch(getProductHeart());
+  // }, []);
 
-  const handleDeleteProductCart = (id) => {
+  const handleDeleteProductHeart = (id) => {
     dispatch(deleteProductHeart(id));
   };
 
-  if (isEmpty(productHeart)) {
-    return;
-  }
   return (
     <div
       className={
@@ -44,12 +41,13 @@ const HeartSideBar = ({ showHeartSideBar, onCloseHeartSideBar }) => {
         </button>
       </div>
       <ul className="heart-sidebar-list">
+        {productHeart.length === 0 && "chưa có sản phẩm"}
         {productHeart.map((product) => (
           <li key={product.id} className="heart-sidebar-item">
             <div className="heart-sidebar-image">
-              <a href="./page/deital.html">
+              <Link to={`/${product.id}`}>
                 <img src={product.image} alt="" />
-              </a>
+              </Link>
             </div>
             <div className="heart-sidebar-content">
               <div className="heart-sidebar-info">
@@ -58,7 +56,7 @@ const HeartSideBar = ({ showHeartSideBar, onCloseHeartSideBar }) => {
               </div>
               <div className="heart-sidebar-action-group">
                 <button
-                  onClick={() => handleDeleteProductCart(product.id)}
+                  onClick={() => handleDeleteProductHeart(product.id)}
                   className="action-delete"
                 >
                   <i className="fa-solid fa-trash-can"></i>

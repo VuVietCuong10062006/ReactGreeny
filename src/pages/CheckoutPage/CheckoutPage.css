@@ -12,6 +12,7 @@
     padding: 10px 20px 10px 20px;
     margin: 0;
     border: 1px solid #e8e8e8;
+    border-radius: 6px;
 }
 
 .order-product-item{
@@ -149,10 +150,15 @@
 .info-ship p a{
     font-size: 16px;
     color: #119744;
+    margin-left: 5px;
 }
 
 .info-ship p a:hover{
     text-decoration: underline;
+}
+
+.input-address-detail .info-ship-input{
+    margin-bottom: 20px;
 }
 
 .info-ship-input input{

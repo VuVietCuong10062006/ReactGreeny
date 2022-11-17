@@ -5,8 +5,7 @@ import user from "../../assets/image/user.png";
 import avatar from "../../assets/image/avatar.jpg";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { getProduct } from "../../redux/productCartSlice";
-import { getAuth, authLogout } from "../../redux/authSlice";
+import { authLogout } from "../../redux/authSlice";
 import CartSideBar from "./CartSideBar";
 import HeartSideBar from "./HeartSideBar";
 import NavSidebar from "./NavSidebar";
@@ -26,16 +25,8 @@ const Header = () => {
   const dispatch = useDispatch();
   
   // useEffect(() => {
-  //   dispatch(getProduct());
+  //   dispatch(getProductHeart());
   // }, []);
-
-  // useEffect(() => {
-  //   dispatch(getAuth());
-  // }, []);
-
-  useEffect(() => {
-    dispatch(getProductHeart());
-  }, []);
 
   const [inputSearch, setInputSearch] = useState("");
   const [productSearch, setProductSearch] = useState([]);

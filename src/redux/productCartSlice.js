@@ -56,7 +56,7 @@ const productCartSlice = createSlice({
     },
     subtractCountProductCart(state, action) {
       const newProductCart = state.productCart.map((product) => {
-        if (product.id === action.payload) {
+        if (product.id === action.payload && product.count > 1 ) {
           return { ...product, count: product.count - 1 };
         }
         return product;

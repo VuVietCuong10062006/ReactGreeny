@@ -57,12 +57,13 @@ const CartSideBar = ({
         </button>
       </div>
       <ul className="cart-sidebar-list">
+        {productCart.length === 0 && "Chưa có sản phẩm"} 
         {productCart.map((product) => (
           <li key={product.id} className="cart-sidebar-item">
             <div className="cart-sidebar-image">
-              <a href="./page/deital.html">
+              <Link to={`/${product.id}`}>
                 <img src={product.image} alt="" />
-              </a>
+              </Link>
             </div>
             <div className="cart-sidebar-content">
               <div className="cart-sidebar-info">

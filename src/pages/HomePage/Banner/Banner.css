@@ -40,8 +40,13 @@
 }
 
 
+.banner-btn .btn{
+    margin-right: 15px;
+}
+
 .banner-btn i{
     font-size: 15px;
+    margin-right: 5px;
 }
 
 .banner-btn .btn{

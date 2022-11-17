@@ -54,19 +54,6 @@
       ]
     },
     {
-      "id": 6,
-      "avatar": [
-        "//images.weserv.nl?url=http://103.237.147.34:8888/api/v1/users/1/files/137"
-      ],
-      "name": "fsdfdsfds",
-      "email": "fesdfdfsd",
-      "phone": "fdsfdsfsf",
-      "password": "fsdfdsfsdf",
-      "roles": [
-        "USER"
-      ]
-    },
-    {
       "avatar": [
         "//images.weserv.nl?url=http://103.237.147.34:8888/api/v1/users/1/files/190"
       ],

@@ -12,8 +12,6 @@ import Testimonial from "./Testimonial";
 const HomePage = () => {
   return (
     <>
-      <ToastContainer />
-
       <Banner />
       <SellProduct />
       <Promo />

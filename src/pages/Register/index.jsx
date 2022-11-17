@@ -1,19 +1,17 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import "./Register.css";
-// import Context from "../../context/Context";
-// import { addUser } from "../../store/actions";
+
 import { useDispatch, useSelector } from "react-redux";
 import { addUsers, getUsers } from "../../redux/userSlice";
-import productApi from "../../api/productApi";
-
+import { toast } from "react-toastify";
 
 const Register = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const users = useSelector((state) => state.users.users);
-  
+
   const [userName, setUserName] = useState("");
   const [userPassWord, setUserPassWord] = useState("");
   const [userEmail, setUserEmail] = useState("");
@@ -22,8 +20,6 @@ const Register = () => {
   const [messageEmail, setMessageEmail] = useState("");
   const [messagePassword, setMessagePassword] = useState("");
   const [messageCfPassword, setMessageCfPassword] = useState("");
-
-  // const { user, dispatchUser } = useContext(Context);
 
   useEffect(() => {
     dispatch(getUsers());
@@ -48,11 +44,15 @@ const Register = () => {
       avatar:
         "https://media.techmaster.vn/api/static/crop/bv9jp4k51co7nj2mhht0",
       password: userPassWord,
-      roles:["USER"]
+      roles: ["USER"],
     };
     dispatch(addUsers(newUser));
-    navigate("/login")
-    console.log("dk thanh cong", newUser);
+    setTimeout(() =>{
+      navigate("/login");
+  },1000)
+    toast.success("Đăng kí thành công", {
+      position: toast.POSITION.TOP_CENTER,
+    });
   };
 
   const checkValidate = () => {

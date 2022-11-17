@@ -1,13 +1,17 @@
 import { useEffect } from "react";
 import "./Feature.css";
 import { useDispatch, useSelector } from "react-redux";
-import { getProduct, addCountProductCart, addProductCart } from "../../../redux/productCartSlice";
+import {
+  getProduct,
+  addCountProductCart,
+  addProductCart,
+} from "../../../redux/productCartSlice";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import productApi from "../../../api/productApi";
 import formatMoney from "../../../utils/utils";
 import { toast } from "react-toastify";
-import { addProductHeart, getProductHeart } from "../../../redux/productHeartSlice";
+import { addProductHeart } from "../../../redux/productHeartSlice";
 
 const Feature = () => {
   const [productFeatures, setProductFeature] = useState([]);
@@ -22,9 +26,9 @@ const Feature = () => {
     });
   }, []);
 
-  useEffect(() => {
-    dispatch(getProductHeart());
-  }, []);
+  // useEffect(() => {
+  //   dispatch(getProductHeart());
+  // }, []);
 
   // useEffect(() => {
   //   dispatch(getProduct());
@@ -36,7 +40,7 @@ const Feature = () => {
     });
   }, []);
 
-  console.log(productCart)
+  console.log(productCart);
   const handleAddProductHeart = (id) => {
     const productItem = products.find((p) => p.id === id);
     // Kiểm tra sản phẩm đã có trong giở hàng hay chưa?

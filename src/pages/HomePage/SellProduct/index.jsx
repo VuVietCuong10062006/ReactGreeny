@@ -16,9 +16,9 @@ const SellProduct = () => {
   const productCart = useSelector((state) => state.productCart.productCart);
   const productHeart = useSelector((state) => state.productHeart.productHeart);
 
-  useEffect(() => {
-    dispatch(getProductHeart());
-  }, []);
+  // useEffect(() => {
+  //   dispatch(getProductHeart());
+  // }, []);
 
   useEffect(() => {
     productApi.getProductSell().then((data) => {
@@ -108,12 +108,12 @@ const SellProduct = () => {
                       <img src={product.images[0]} alt="" />
                     </Link>
                     <div className="product-widget">
-                      <a href="" className="product-video">
+                      <Link href="/" className="product-video">
                         <i className="fa-solid fa-play"></i>
-                      </a>
-                      <a href="" className="product-view">
+                      </Link>
+                      <Link to={`/${product.id}`} className="product-view">
                         <i className="fa-solid fa-eye"></i>
-                      </a>
+                      </Link>
                     </div>
                   </div>
                   <div className="product-content">

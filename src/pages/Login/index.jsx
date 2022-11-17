@@ -49,7 +49,7 @@ const Login = () => {
     dispatch(authLogin(checkUser));
     setTimeout(() =>{
         navigate("/");
-    },1500)
+    },1000)
   };
 
   const checkValidate = () => {
