@@ -94,15 +94,16 @@
     }
   ],
   "auth": {
-    "id": 4,
+    "id": 2,
     "avatar": [
-      "http://103.237.147.34:8888/api/v1/users/1/files/88"
+      "http://103.237.147.34:8888/api/v1/users/1/files/86"
     ],
-    "name": "Lại Cao Đài",
-    "email": "laicaodai@gmail.com",
-    "phone": "123456",
+    "name": "Vũ Việt Cường",
+    "email": "vuvietcuong@gmail.com",
+    "phone": "0336294777",
     "password": "123456",
     "roles": [
+      "ADMIN",
       "USER"
     ]
   },

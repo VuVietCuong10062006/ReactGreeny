@@ -6,8 +6,6 @@ const axiosClient = axios.create({
     headers: { 'Content-Type': 'application/json; charset=UTF-8' }
 });
 
-console.log(process.env.REACT_APP_API);
-
 // Add a response interceptor
 axiosClient.interceptors.response.use(function (response) {
     // Any status code that lie within the range of 2xx cause this function to trigger
