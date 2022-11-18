@@ -1,8 +1,8 @@
 import axios from "axios";
 
 const axiosClient = axios.create({
-    // baseURL: "https://greeny-test.herokuapp.com/",
-    baseURL: "http://localhost:3001",
+    baseURL: "https://greeny-test.herokuapp.com/",
+    // baseURL: "http://localhost:3001",
     headers: { 'Content-Type': 'application/json; charset=UTF-8' }
 });
 
