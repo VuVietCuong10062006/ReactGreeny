@@ -23,7 +23,7 @@ const Header = () => {
 
   const auth = useSelector((state) => state.auth.auth);
   const dispatch = useDispatch();
-  
+
   // useEffect(() => {
   //   dispatch(getProductHeart());
   // }, []);
@@ -40,7 +40,6 @@ const Header = () => {
   const handleInputSearch = (searchValue) => {
     setInputSearch(searchValue);
   };
-
   const debounce = useDebounce(inputSearch, 700);
 
   useEffect(() => {
@@ -136,7 +135,10 @@ const Header = () => {
                     onClick={handleShowMenuAccount}
                     className="header-account header-account-clone"
                   >
-                    <img src="https://icon-library.com/images/no-image-icon/no-image-icon-0.jpg" alt="Account" />
+                    <img
+                      src={auth.avatar}
+                      alt="Account"
+                    />
                   </div>
                   <div
                     className={
@@ -146,9 +148,9 @@ const Header = () => {
                     }
                   >
                     <div className="info">
-                      <img src="https://icon-library.com/images/no-image-icon/no-image-icon-0.jpg" alt="" />
-                      <h4>Vũ Việt Cường</h4>
-                      <p>vuvietcuong@gmail.com</p>
+                      <img src={auth.avatar} alt="" />
+                      <h4>{auth.name}</h4>
+                      <p>{auth.email}</p>
                     </div>
                     <ul>
                       {auth.roles.includes("ADMIN") && (
@@ -159,6 +161,12 @@ const Header = () => {
                           </li>
                         </Link>
                       )}
+                      <Link to="/profile">
+                        <li className="logout">
+                          <i className="fa-solid fa-address-card"></i>
+                          <span>Hồ sơ cá nhân</span>
+                        </li>
+                      </Link>
                       <li onClick={handleLogout} className="logout">
                         <i className="fa-solid fa-arrow-up-from-bracket"></i>
                         <span>Đăng xuất</span>
@@ -184,7 +192,7 @@ const Header = () => {
                 <div onClick={handleShowMenuAccount} className="account">
                   <div className="header-account">
                     <img
-                      src="https://icon-library.com/images/no-image-icon/no-image-icon-0.jpg"
+                      src={auth.avatar}
                       alt="Account"
                     />
                   </div>
@@ -196,12 +204,9 @@ const Header = () => {
                     }
                   >
                     <div className="info">
-                      <img
-                        src="https://icon-library.com/images/no-image-icon/no-image-icon-0.jpg"
-                        alt=""
-                      />
-                      <h4>Vũ Việt Cường</h4>
-                      <p>vuvietcuong@gmail.com</p>
+                      <img src={auth.avatar} alt="" />
+                      <h4>{auth.name}</h4>
+                      <p>{auth.email}</p>
                     </div>
                     <ul>
                       {auth.roles.includes("ADMIN") && (
@@ -212,6 +217,12 @@ const Header = () => {
                           </li>
                         </Link>
                       )}
+                      <Link to="/profile">
+                        <li className="logout">
+                          <i className="fa-solid fa-address-card"></i>
+                          <span>Hồ sơ cá nhân</span>
+                        </li>
+                      </Link>
                       <li onClick={handleLogout} className="logout">
                         <i className="fa-solid fa-arrow-up-from-bracket"></i>
                         <span>Đăng xuất</span>

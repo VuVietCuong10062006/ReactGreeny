@@ -1,0 +1,31 @@
+#avatar-preview {
+  width: 150px;
+  height: 150px;
+}
+
+.avatar-preview {
+  display: flex;
+  flex-direction: column;
+  label {
+    width: 200px;
+    display: flex;
+  }
+}
+
+.image-upload {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  border-radius: 5px;
+  align-items: center;
+  margin-top: 30px;
+  cursor: pointer;
+  border: 1px solid black;
+  width: 100%;
+
+  p {
+    margin-left: 5px;
+    margin-bottom: 0;
+  }
+}

@@ -128,6 +128,10 @@ const productApi = {
     const url = `/users/${data.id}`;
     return axiosClient.put(url, data);
   },
+  updateProfileUsers(data){
+    const url = `/users/${data.id}`;
+    return axiosClient.patch(url, data);
+  },
   deleteUsers(id){
     const url = `/users/${id}`;
     return axiosClient.delete(url, id);

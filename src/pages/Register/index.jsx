@@ -42,14 +42,14 @@ const Register = () => {
       email: userEmail,
       phone: "",
       avatar:
-        "https://media.techmaster.vn/api/static/crop/bv9jp4k51co7nj2mhht0",
+      "https://icon-library.com/images/no-image-icon/no-image-icon-0.jpg",
       password: userPassWord,
       roles: ["USER"],
     };
     dispatch(addUsers(newUser));
-    setTimeout(() =>{
+    setTimeout(() => {
       navigate("/login");
-  },1000)
+    }, 1000);
     toast.success("Đăng kí thành công", {
       position: toast.POSITION.TOP_CENTER,
     });

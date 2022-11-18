@@ -27,6 +27,14 @@ export const updateUsers = createAsyncThunk(
   }
 );
 
+export const updateProfileUsers = createAsyncThunk(
+  "users/updateProfileUsers",
+  async (data) => {
+    const res = await productApi.updateProfileUsers(data);
+    return res;
+  }
+);
+
 export const deleteUsers = createAsyncThunk(
   "users/deleteUsers",
   async (id) => {
@@ -59,6 +67,12 @@ const usersSlice = createSlice({
       //   }
       //   return user
       // })
+      let index = state.users.findIndex(
+        (p) => p.id === action.payload.id
+      );
+      state.users[index] = action.payload;
+    });
+    builder.addCase(updateProfileUsers.fulfilled, (state, action) => {
       let index = state.users.findIndex(
         (p) => p.id === action.payload.id
       );

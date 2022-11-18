@@ -30,11 +30,11 @@
     {
       "id": 4,
       "avatar": [
-        "//images.weserv.nl?url=http://103.237.147.34:8888/api/v1/users/1/files/88"
+        "//images.weserv.nl?url=http://103.237.147.34:8888/api/v1/users/1/files/234"
       ],
       "name": "Lại Cao Đài",
       "email": "laicaodai@gmail.com",
-      "phone": "123456",
+      "phone": "1234567",
       "password": "123456",
       "roles": [
         "USER"
@@ -54,39 +54,17 @@
       ]
     },
     {
-      "avatar": [
-        "//images.weserv.nl?url=http://103.237.147.34:8888/api/v1/users/1/files/190"
-      ],
-      "name": "Vũ Việt Cường",
-      "email": "vuvietcuong5@gmail.com",
-      "phone": "0336294777",
-      "password": "123456",
-      "roles": [
-        "USER"
-      ],
-      "id": 7
-    },
-    {
-      "name": "Vu Viet Cuong ",
-      "email": "vuvietcuong20@gmail.com",
-      "phone": "",
-      "avatar": "https://media.techmaster.vn/api/static/crop/bv9jp4k51co7nj2mhht0",
-      "password": "123456",
-      "roles": [
-        "USER"
-      ],
-      "id": 8
-    },
-    {
-      "name": "Vũ Việt Cường",
+      "name": "Vũ Việt Cường 7",
       "email": "vuvietcuong6@gmail.com",
-      "phone": "",
-      "avatar": "https://media.techmaster.vn/api/static/crop/bv9jp4k51co7nj2mhht0",
+      "phone": "1222112",
+      "avatar": [
+        "//images.weserv.nl?url=http://103.237.147.34:8888/api/v1/users/1/files/233"
+      ],
       "password": "123456",
       "roles": [
         "USER"
       ],
-      "id": 9
+      "id": 6
     }
   ],
   "auth": {

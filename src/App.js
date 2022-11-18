@@ -20,6 +20,7 @@ import NewProduct from "./pages/Admin/NewProduct/NewProduct";
 import NewUsers from "./pages/Admin/NewUser/NewUser";
 import DetailUser from "./pages/Admin/DetailUser/DetailUser";
 import DetailProduct from "./pages/Admin/DetailProduct/DetailProduct";
+import Profile from "./pages/Profile/Profile";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
       <Routes>
         <Route path="login" element={<Login />} />
         <Route path="register" element={<Register />} />
+        <Route path="profile" element={<Profile/>}/>
         <Route path="admin">
           <Route index element={<HomeAdmin />} />
           <Route path="users">
