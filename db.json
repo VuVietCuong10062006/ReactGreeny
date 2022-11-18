@@ -65,6 +65,28 @@
         "USER"
       ],
       "id": 7
+    },
+    {
+      "name": "Vu Viet Cuong ",
+      "email": "vuvietcuong20@gmail.com",
+      "phone": "",
+      "avatar": "https://media.techmaster.vn/api/static/crop/bv9jp4k51co7nj2mhht0",
+      "password": "123456",
+      "roles": [
+        "USER"
+      ],
+      "id": 8
+    },
+    {
+      "name": "Vũ Việt Cường",
+      "email": "vuvietcuong6@gmail.com",
+      "phone": "",
+      "avatar": "https://media.techmaster.vn/api/static/crop/bv9jp4k51co7nj2mhht0",
+      "password": "123456",
+      "roles": [
+        "USER"
+      ],
+      "id": 9
     }
   ],
   "auth": {

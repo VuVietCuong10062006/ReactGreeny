@@ -3,8 +3,7 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import "./Login.css";
 import { useDispatch, useSelector } from "react-redux";
-import { authLogin, getAuth} from "../../redux/authSlice";
-import productApi from "../../api/productApi";
+import { authLogin} from "../../redux/authSlice";
 
 import { ToastContainer, toast } from "react-toastify";
 import { getUsers } from "../../redux/userSlice";
@@ -19,6 +18,7 @@ const Login = () => {
     dispatch(getUsers());
   }, []);
 
+  console.log(users)
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [messageEmail, setMessageEmail] = useState("");
@@ -35,6 +35,8 @@ const Login = () => {
     const checkUser = users.find(
       (user) => user.email === email && user.password === password
     );
+
+    console.log(checkUser)
 
     if (!checkUser) {
       toast.error("Email hoặc password không chính xác", {
