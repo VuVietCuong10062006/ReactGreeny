@@ -21,6 +21,8 @@ import NewUsers from "./pages/Admin/NewUser/NewUser";
 import DetailUser from "./pages/Admin/DetailUser/DetailUser";
 import DetailProduct from "./pages/Admin/DetailProduct/DetailProduct";
 import Profile from "./pages/Profile/Profile";
+import PrivateRoutes from "./pages/PrivateRoutes/PrivateRoutes";
+import SecurityAccount from "./pages/SecurityAccount/SecurityAccount";
 
 function App() {
   return (
@@ -28,18 +30,22 @@ function App() {
       <Routes>
         <Route path="login" element={<Login />} />
         <Route path="register" element={<Register />} />
-        <Route path="profile" element={<Profile/>}/>
-        <Route path="admin">
-          <Route index element={<HomeAdmin />} />
-          <Route path="users">
-            <Route path="" element={<ListUsers />} />
-            <Route path="new" element={<NewUsers />} />
-            <Route path=":userId" element={<DetailUser />} />
-          </Route>
-          <Route path="products">
-            <Route path="" element={<ListProducts />} />
-            <Route path="new" element={<NewProduct />} />
-            <Route path=":productId" element={<DetailProduct />} />
+
+        <Route element={<PrivateRoutes />}>
+          <Route path="profile" element={<Profile />} />
+          <Route path="security" element={<SecurityAccount/>}/>
+          <Route path="admin">
+            <Route index element={<HomeAdmin />} />
+            <Route path="users">
+              <Route path="" element={<ListUsers />} />
+              <Route path="new" element={<NewUsers />} />
+              <Route path=":userId" element={<DetailUser />} />
+            </Route>
+            <Route path="products">
+              <Route path="" element={<ListProducts />} />
+              <Route path="new" element={<NewProduct />} />
+              <Route path=":productId" element={<DetailProduct />} />
+            </Route>
           </Route>
         </Route>
 

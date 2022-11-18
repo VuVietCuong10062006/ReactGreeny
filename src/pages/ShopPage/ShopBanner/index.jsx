@@ -8,7 +8,7 @@ const ShopBanner = () => {
             <h2>CỬA HÀNG</h2>
             <ol className="content">
                 <li className="content-item">Trang chủ</li>
-                <li className="content-item active">Shop</li>
+                <li className="content-item active">Cửa hàng</li>
             </ol>
         </div>
     </section>

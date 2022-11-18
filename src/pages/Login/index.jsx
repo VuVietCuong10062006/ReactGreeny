@@ -101,7 +101,7 @@ const Login = () => {
           </div>
           <div className="input-row">
             <input
-              type="Email"
+              type="password"
               placeholder="Mật khẩu"
               id="passwork"
               value={password}

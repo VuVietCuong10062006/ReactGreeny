@@ -1,5 +1,9 @@
 
 /* banner */
+.banner{
+    margin-top: 155px;
+}
+
 .banner-part{
     position: relative;
     padding: 50px 0;

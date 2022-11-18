@@ -32,6 +32,7 @@ const Profile = () => {
       email: auth.email,
       phone: phone,
       roles: auth.roles,
+      password : auth.password
       //   address: address,
     };
     localStorage.setItem("auth", JSON.stringify(newU));
@@ -44,9 +45,6 @@ const Profile = () => {
       navigate(-1);
     }, 1000);
   };
-
-  console.log(auth);
-  console.log(users);
 
   return (
     <section className="py-5">
@@ -66,7 +64,7 @@ const Profile = () => {
                   />
                   <label htmlFor="file">
                     <span className="image-upload">
-                      <i class="fa-solid fa-upload"></i>
+                      <i className="fa-solid fa-upload"></i>
                       <p>Thay ảnh đại diện</p>
                     </span>
                   </label>

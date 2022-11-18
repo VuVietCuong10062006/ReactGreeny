@@ -105,7 +105,6 @@ const Header = () => {
   const handleShowMenuAccount = () => {
     setShowMenuAccount((prev) => !prev);
   };
-
   return (
     <>
       <div className="header">
@@ -135,10 +134,7 @@ const Header = () => {
                     onClick={handleShowMenuAccount}
                     className="header-account header-account-clone"
                   >
-                    <img
-                      src={auth.avatar}
-                      alt="Account"
-                    />
+                    <img src={auth.avatar} alt="Account" />
                   </div>
                   <div
                     className={
@@ -167,6 +163,12 @@ const Header = () => {
                           <span>Hồ sơ cá nhân</span>
                         </li>
                       </Link>
+                      <Link to="/security">
+                        <li className="logout">
+                        <i className="fa-solid fa-lock"></i>
+                          <span>Bảo mật tài khoản</span>
+                        </li>
+                      </Link>
                       <li onClick={handleLogout} className="logout">
                         <i className="fa-solid fa-arrow-up-from-bracket"></i>
                         <span>Đăng xuất</span>
@@ -191,10 +193,7 @@ const Header = () => {
               {auth.id && (
                 <div onClick={handleShowMenuAccount} className="account">
                   <div className="header-account">
-                    <img
-                      src={auth.avatar}
-                      alt="Account"
-                    />
+                    <img src={auth.avatar} alt="Account" />
                   </div>
                   <div
                     className={
@@ -221,6 +220,12 @@ const Header = () => {
                         <li className="logout">
                           <i className="fa-solid fa-address-card"></i>
                           <span>Hồ sơ cá nhân</span>
+                        </li>
+                      </Link>
+                      <Link to="/security">
+                        <li className="logout">
+                        <i className="fa-solid fa-lock"></i>
+                          <span>Bảo mật tài khoản</span>
                         </li>
                       </Link>
                       <li onClick={handleLogout} className="logout">

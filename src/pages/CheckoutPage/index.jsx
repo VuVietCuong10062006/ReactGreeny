@@ -22,28 +22,44 @@ import {
 import { clearProductCart } from "../../redux/productCartSlice";
 
 const CheckoutPage = () => {
+  const productCart = useSelector((state) => state.productCart.productCart);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
-  const productCart = useSelector((state) => state.productCart.productCart)
-
-  const navigate = useNavigate()
-  const [name, setName] = useState();
-  const [email, setEmail] = useState();
-  const [phone, setPhone] = useState();
-  const [address, setAddress] = useState();
-  const [note, setNote] = useState();
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [address, setAddress] = useState("");
+  const [note, setNote] = useState("");
   const [messageName, setMessageName] = useState("");
   const [messageEmail, setMessageEmail] = useState("");
   const [messagePhone, setMessagePhone] = useState("");
   const [messageAddress, setMessageAddress] = useState("");
   const [messageNote, setMessageNote] = useState("");
 
+  const provinces = useSelector((state) => state.api.provinces);
+  const quan = useSelector((state) => state.api.quan);
+  const huyen = useSelector((state) => state.api.huyen);
+
+  const [valueTinh, setvalueTinh] = useState();
+  const [valueQuan, setValueQuan] = useState();
+  const [valueHuyen, setValueHuyen] = useState();
+  const [messageProvince, setMessageProvince] = useState("");
+  const [messageQuan, setMessageQuan] = useState("");
+  const [messageHuyen, setMessageHuyen] = useState("");
   const hanleChangeCity = (e) => {
+    setvalueTinh(e.target.value)
     dispatch(getQuanByProvince(e.target.value));
   };
 
   const hanleChangeQuan = (e) => {
+    setValueQuan(e.target.value)
     dispatch(getHuyenByQuan(e.target.value));
   };
+
+   const hanleChangeHuyen = (e) => {
+    setValueHuyen(e.target.value)
+   }
 
   const handleCheckout = () => {
     setMessageName("");
@@ -54,12 +70,12 @@ const CheckoutPage = () => {
 
     let isValid = checkValidate();
     if (!isValid) return;
-    localStorage.removeItem("productCart")
+    localStorage.removeItem("productCart");
     toast.success("Mua hàng thành công", {
       position: toast.POSITION.TOP_CENTER,
     });
-    dispatch(clearProductCart())
-    navigate("/")
+    dispatch(clearProductCart());
+    navigate("/");
   };
 
   const checkValidate = () => {
@@ -84,6 +100,21 @@ const CheckoutPage = () => {
 
     if (!address) {
       setMessageAddress("Địa chỉ không được để chống");
+      isCheck = false;
+    }
+
+    if (!valueTinh) {
+      setMessageProvince("Chưa chọn tỉnh thành");
+      isCheck = false;
+    }
+
+    if (!valueQuan) {
+      setMessageQuan("Chưa chọn quận huyện");
+      isCheck = false;
+    }
+
+    if (!valueHuyen) {
+      setMessageHuyen("Chưa chọn xã phường");
       isCheck = false;
     }
 
@@ -130,11 +161,6 @@ const CheckoutPage = () => {
   //   },
   // });
 
-
-  const dispatch = useDispatch();
-  const provinces = useSelector((state) => state.api.provinces);
-  const quan = useSelector((state) => state.api.quan);
-  const huyen = useSelector((state) => state.api.huyen);
 
   useEffect(() => {
     dispatch(getApiProvinces());
@@ -281,7 +307,7 @@ const CheckoutPage = () => {
                             </option>
                           ))}
                         </select>
-                        <small></small>
+                        <small>{messageProvince}</small>
                       </div>
                       <div className="info-ship-input">
                         <select
@@ -296,10 +322,10 @@ const CheckoutPage = () => {
                             </option>
                           ))}
                         </select>
-                        <small></small>
+                        <small>{messageQuan}</small>
                       </div>
                       <div className="info-ship-input">
-                        <select name="province" id="ward">
+                        <select onChange={hanleChangeHuyen} name="province" id="ward">
                           <option value="">Xã / phường</option>
                           {huyen.map((p, i) => (
                             <option key={i} value={p.code}>
@@ -307,7 +333,7 @@ const CheckoutPage = () => {
                             </option>
                           ))}
                         </select>
-                        <small></small>
+                        <small>{messageHuyen}</small>
                       </div>
                     </div>
                     <div className="info-ship-input">
@@ -331,26 +357,22 @@ const CheckoutPage = () => {
                   <div className="payments">
                     <h2>Hình thức thanh toán</h2>
                     <div className="radio-wrapper">
-                      <input type="radio" name="payments" id="payments" />
-                      <label htmlFor="payments">
+                      <input type="radio" name="payments" id="payments1" />
+                      <label htmlFor="payments1">
                         <span>Thanh toán qua VNPAY-QR</span>
                         <img src={payment6} alt="" />
                       </label>
                     </div>
                     <div className="radio-wrapper">
-                      <input type="radio" name="payments" id="payments" />
-                      <label htmlFor="payments">
+                      <input type="radio" name="payments" id="payments2" />
+                      <label htmlFor="payments2">
                         <span>Thanh toán qua Ví MoMo</span>
                         <img src={payment7} alt="" />
                       </label>
                     </div>
                     <div className="radio-wrapper">
-                      <input
-                        type="radio"
-                        name="payments"
-                        id="payments"
-                      />
-                      <label htmlFor="payments">
+                      <input type="radio" name="payments" id="payments3" />
+                      <label htmlFor="payments3">
                         <span> Thanh toán khi nhận hàng (COD)</span>
                         <img src={payment9} alt="" />
                       </label>

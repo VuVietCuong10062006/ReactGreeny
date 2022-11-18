@@ -185,11 +185,12 @@
 .info-ship-input small{
     color: #e74c3c;
     font-size: 12px;
+    visibility: visible;
     /* visibility: hidden; */
 }
 
 .info-ship-input.error small{
-    /* visibility: visible; */
+    visibility: visible;
 }
 
 .info-ship-input input:focus{

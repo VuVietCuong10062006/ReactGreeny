@@ -123,7 +123,7 @@ const Register = () => {
             <input
               value={userPassWord}
               onChange={(e) => setUserPassWord(e.target.value)}
-              type="Email"
+              type="password"
               placeholder="Mật khẩu"
               id="passwork"
             />
@@ -133,7 +133,7 @@ const Register = () => {
             <input
               value={userCfPassword}
               onChange={(e) => setUserCfPassword(e.target.value)}
-              type="Email"
+              type="password"
               placeholder="Nhập lại mật khẩu"
               id="cf-passwork"
             />
