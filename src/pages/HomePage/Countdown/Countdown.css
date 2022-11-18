@@ -94,3 +94,43 @@
     font-size: 15px;
     font-weight: 500;
 }
+
+@media (max-width: 390px){
+    /* countdown */
+    .countdown{
+        margin-bottom: 50px;
+    }
+
+    .countdown-time{
+        padding: 20px;
+    }
+
+    .countdown-time::before{
+        top: 25%
+    }
+
+    .countdown-content h3{
+        font-size: 32px;
+        line-height: 40px;
+    }
+
+    .countdown-content p{
+        margin-bottom: 20px;
+    }
+
+    .countdown-clock{
+        margin-bottom: 20px;
+    }
+
+    .countdown-time span{
+        font-size: 35px;
+    }
+
+    .countdown-time p{
+        font-size: 16px;
+    }
+
+    .countdown-btn{
+        margin-bottom: 20px;
+    }
+}

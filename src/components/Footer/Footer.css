@@ -116,3 +116,22 @@
 .footer-bottom a:hover{
     text-decoration: underline;
 }
+
+@media (max-width: 390px){
+    /* footer */
+    .footer{
+        padding-top: 50px;
+    }
+
+    .footer-contact ul p {
+        margin: 0;
+    }
+
+    .footer-bottom{
+        margin: 0;
+    }
+
+    .footer-card img{
+        margin-bottom: 5px;
+    }
+}

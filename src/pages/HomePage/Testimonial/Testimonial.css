@@ -71,3 +71,11 @@
     transform: scale(0.75);
     transition: all linear 0.3s;
 }
+
+@media (max-width: 390px){
+    .testimonial-title h2{
+        font-size: 28px;
+        line-height: 36px;
+    }
+
+}

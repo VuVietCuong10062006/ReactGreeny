@@ -74,7 +74,6 @@ const ProductDetailPage = () => {
 
   return (
     <>
-    <ToastContainer/>
       <section className="details">
         <div className="container">
           <div className="row align-items-center">

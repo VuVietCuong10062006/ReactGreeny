@@ -199,3 +199,21 @@
     background-color: #119744;
     color: #fff;
 }
+
+@media (max-width: 390px){
+    .sell{
+        padding-top: 50px;
+    }
+
+    .sell .product-rating i{
+        font-size: 12px;
+    }
+
+    .sell .product-name{
+        font-size: 15px;
+    }
+
+    .sell .product-price{
+        font-size: 15px;
+    }
+}

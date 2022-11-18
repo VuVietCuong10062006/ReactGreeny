@@ -207,3 +207,42 @@
     font-weight: 500;
     border: 2px solid #119744;
 }
+
+@media (max-width: 390px){
+    /* feature */
+    .feature{
+        padding-top: 50px;
+        margin-bottom: 50px;
+    }
+
+    .feature-title h2{
+        font-size: 28px;
+        line-height: 36px;
+    }
+
+    .feature .feature-rating i{
+        font-size: 12px;
+    }
+
+    .feature .feature-price{
+        font-size: 15px;
+    }
+
+    .feature .feature-name{
+        font-size: 15px;
+        line-height: 24px;
+    }
+
+    .feature .feature-desc{
+        display: none;
+    }
+
+    .feature-image{
+        width: 150px;
+    }
+
+    .feature .feature-content{
+        padding-left: 12px;
+        margin-left: 12px;
+    }
+}
