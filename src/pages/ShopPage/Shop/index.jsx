@@ -1,24 +1,33 @@
 import React, { useEffect, useState } from "react";
 import "./Shop.css";
 import { useDispatch, useSelector } from "react-redux";
-import { getProduct, addProduct, addProductCart } from "../../../redux/productCartSlice";
+import {
+  getProduct,
+  addProduct,
+  addProductCart,
+} from "../../../redux/productCartSlice";
 import productApi from "../../../api/productApi";
 import formatMoney from "../../../utils/utils";
 import { toast, ToastContainer } from "react-toastify";
 import { Link } from "react-router-dom";
 import Pagination from "../../../components/Panigation/Panigation";
+import shopBanner from "../../../assets/image/shop-promo.jpg";
 // import { isEmpty } from "../../../utils/utils";
-import { addProductHeart, getProductHeart } from "../../../redux/productHeartSlice";
+import {
+  addProductHeart,
+  getProductHeart,
+} from "../../../redux/productHeartSlice";
 
 const Shop = () => {
   const [ratings, setRatings] = useState([]);
   const [tags, setTags] = useState([]);
   const [categorys, setCategorys] = useState([]);
   const [products, setProducts] = useState([]);
+  // const [priceMin, setPriceMin] = useState("");
+  // const [priceMax, setPriceMax] = useState("");
   const dispatch = useDispatch();
   const productCart = useSelector((state) => state.productCart.productCart);
   const productHeart = useSelector((state) => state.productHeart.productHeart);
-
 
   const [checkedTag, setCheckedTag] = useState();
   const [checkedCategory, setCheckedCategory] = useState();
@@ -30,11 +39,6 @@ const Shop = () => {
   let PageSize = 12;
 
   const [currentPage, setCurrentPage] = useState(1);
-
-
-  // useEffect(() => {
-  //   dispatch(getProductHeart());
-  // }, []);
 
   useEffect(() => {
     productApi.getProducts().then((data) => {
@@ -86,6 +90,22 @@ const Shop = () => {
         setProductRenderShop(data);
       });
   }, [filter, typeSort]);
+
+  // const handleFilterPrice = () =>{
+  //   console.log(1)
+  //   productApi
+  //     .sortProductShop({
+  //       sort: typeSort,
+  //       tag: filter.tag,
+  //       category: filter.category,
+  //       rating: filter.rating,
+  //       priceMin : priceMin,
+  //       priceMax : priceMax
+  //     })
+  //     .then((data) => {
+  //       setProductRenderShop(data);
+  //     });
+  // }
 
   useEffect(() => {
     if (!productRenderShop.length) {
@@ -179,29 +199,33 @@ const Shop = () => {
             <div className="col-lg-3 col-md-5">
               <div className="shop-widget-promo">
                 <Link to="/shop-page">
-                  <img src="../public/image/banner/shop-promo.jpg" alt="" />
+                  <img src={shopBanner} alt="" />
                 </Link>
               </div>
 
-              <div className="shop-widget">
+              {/* <div className="shop-widget">
                 <h6 className="shop-widget-title">Lọc Theo Giá</h6>
                 <div className="shop-widget-group">
                   <input
                     className="search-price-min"
                     type="text"
                     placeholder="Min"
+                    // value={priceMin}
+                    // onChange={(e) => setPriceMin(Number(e.target.value))}
                   />
                   <input
                     className="search-price-max"
                     type="text"
                     placeholder="Max"
+                    // value={priceMax}
+                    // onChange={(e) => setPriceMax(Number(e.target.value))}
                   />
                 </div>
                 <button className="shop-widget-btn btn-search-price">
                   <i className="fa-solid fa-magnifying-glass"></i>
                   <span>Tìm Kiếm</span>
                 </button>
-              </div>
+              </div> */}
 
               <div className="shop-widget">
                 <h6 className="shop-widget-title">Lọc Theo Xếp Hang</h6>
@@ -351,7 +375,10 @@ const Shop = () => {
                         <div className="product-label">
                           <label>{product.tag}</label>
                         </div>
-                        <div onClick={() => handleAddProductHeart(product.id)} className="product-wish">
+                        <div
+                          onClick={() => handleAddProductHeart(product.id)}
+                          className="product-wish"
+                        >
                           <i className="fa-solid fa-heart"></i>
                         </div>
                         <Link to={`/${product.id}`}>

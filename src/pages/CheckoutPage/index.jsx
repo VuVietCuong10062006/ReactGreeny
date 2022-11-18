@@ -7,7 +7,7 @@ import payment6 from "../../assets/image/payment-6.png";
 import payment7 from "../../assets/image/payment-7.png";
 import payment9 from "../../assets/image/payment-9.png";
 import formatMoney from "../../utils/utils";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { toast } from "react-toastify";
 // import { useFormik } from "formik";
@@ -19,8 +19,13 @@ import {
   getHuyenByQuan,
   getQuanByProvince,
 } from "../../redux/apiSlice";
+import { clearProductCart } from "../../redux/productCartSlice";
 
 const CheckoutPage = () => {
+
+  const productCart = useSelector((state) => state.productCart.productCart)
+
+  const navigate = useNavigate()
   const [name, setName] = useState();
   const [email, setEmail] = useState();
   const [phone, setPhone] = useState();
@@ -49,9 +54,12 @@ const CheckoutPage = () => {
 
     let isValid = checkValidate();
     if (!isValid) return;
+    localStorage.removeItem("productCart")
     toast.success("Mua hàng thành công", {
       position: toast.POSITION.TOP_CENTER,
     });
+    dispatch(clearProductCart())
+    navigate("/")
   };
 
   const checkValidate = () => {
@@ -122,7 +130,6 @@ const CheckoutPage = () => {
   //   },
   // });
 
-  const productCart = useSelector((state) => state.productCart.productCart);
 
   const dispatch = useDispatch();
   const provinces = useSelector((state) => state.api.provinces);
@@ -340,7 +347,6 @@ const CheckoutPage = () => {
                     <div className="radio-wrapper">
                       <input
                         type="radio"
-                        checked="checked"
                         name="payments"
                         id="payments"
                       />

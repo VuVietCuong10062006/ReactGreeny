@@ -43,6 +43,10 @@ const productCartSlice = createSlice({
       : [],
   },
   reducers: {
+    clearProductCart(state,action){
+      state.productCart = []
+      localStorage.setItem("productCart", JSON.stringify(state.productCart));
+    },
     addProductCart(state, action) {
       state.productCart.push(action.payload);
       localStorage.setItem("productCart", JSON.stringify(state.productCart));
@@ -100,6 +104,7 @@ export const {
   deleteProductCart,
   subtractCountProductCart,
   addCountProductCart,
+  clearProductCart
 } = productCartSlice.actions;
 
 export default productCartSlice.reducer;

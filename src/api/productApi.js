@@ -41,22 +41,8 @@ const productApi = {
     return axiosClient.get(url);
   },
   sortProductShop(object) {
-    const { sort, tag, category, rating } = object;
+    const { sort, tag, category, rating , priceMin , priceMax } = object;
 
-    // let baseUrl = "products?";
-    // let count = 0;
-    // let temp = '';
-    // for (const key in object) {
-    //     if (!!object[key] && key === 0) {
-    //         baseUrl = baseUrl + `_sort=price&_order=${object[key]}&`
-    //     }
-    //     if (!!object[key]) {
-    //         baseUrl = baseUrl + `_sort=price&_order=${object[key]}`
-    //     }
-    // }
-    // if (count === 1) {
-    //     temp = '&'
-    // }
     const url = `products?${!!sort ? `_sort=price&_order=${sort}&` : ""}${
       !!tag ? `tag=${tag}&` : ""
     }${!!category ? `category=${category}&` : ""}${
@@ -64,6 +50,16 @@ const productApi = {
     }`;
     return axiosClient.get(url);
   },
+  // sortProductShop(object) {
+  //   const { sort, tag, category, rating , priceMin , priceMax } = object;
+
+  //   const url = `products?${!!sort ? `_sort=price&_order=${sort}&` : ""}${
+  //     !!tag ? `tag=${tag}&` : ""
+  //   }${!!category ? `category=${category}&` : ""}${
+  //     !!rating ? `rating=${rating}` : ""
+  //   }${!!(priceMin && priceMax) ? `products?price_gte=${priceMin}&price_lte=${priceMax}&` : ""}`;
+  //   return axiosClient.get(url);
+  // },
   getRatings() {
     const url = "/ratings";
     return axiosClient.get(url);
